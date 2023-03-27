@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useForm, ValidationError } from '@formspree/react';
 import {
   Progress,
   Box,
@@ -22,36 +23,52 @@ import {
 import { useToast } from '@chakra-ui/react';
 
 const Form1 = () => {
-  const [show, setShow] = React.useState(false);
-  const handleClick = () => setShow(!show);
+  const [state, handleSubmit] = useForm("mzbqarby");
+  if (state.succeeded) {
+    return <p>Thanks for joining!</p>;
+}
   return (
     <>
       <Heading w="100%" textAlign={'center'} fontWeight="normal" mb="2%">
         Get In Touch With Me
       </Heading>
+      <form  onSubmit={handleSubmit}>
       <Flex>
         <FormControl mr="5%">
           <FormLabel htmlFor="first-name" fontWeight={'normal'}>
             First name
           </FormLabel>
-          <Input id="first-name" placeholder="First name" />
+          <Input id="first-name" placeholder="First name" name='firstname'/>
         </FormControl>
-
+        <ValidationError 
+        prefix="FirstName" 
+        field="firstname"
+        errors={state.errors}
+      />
         <FormControl>
           <FormLabel htmlFor="last-name" fontWeight={'normal'}>
             Last name
           </FormLabel>
-          <Input id="last-name" placeholder="First name" />
+          <Input id="last-name" placeholder="First name" name='lastname' />
         </FormControl>
+        <ValidationError 
+        prefix="lastName" 
+        field="lastname"
+        errors={state.errors}
+      />
       </Flex>
       <FormControl mt="2%">
         <FormLabel htmlFor="email" fontWeight={'normal'}>
           Email address
         </FormLabel>
-        <Input id="email" type="email" />
+        <Input id="email" type="email" name='' />
         <FormHelperText>We'll never share your email.</FormHelperText>
       </FormControl>
-
+      <ValidationError 
+        prefix="Email" 
+        field="email"
+        errors={state.errors}
+      />
       <FormControl>
         <FormLabel htmlFor="textarea" fontWeight={'normal'} mt="2%">
           Write your Message
@@ -64,7 +81,9 @@ const Form1 = () => {
           />
         </InputGroup>
       </FormControl>
-    </>
+  
+      </form>
+        </>
   );
 };
 
@@ -72,6 +91,7 @@ const Form1 = () => {
 
 export default function ContactForm() {
   const toast = useToast();
+  
   const [step, setStep] = useState(1);
   const [progress, setProgress] = useState(33.33);
   return (
@@ -93,6 +113,7 @@ export default function ContactForm() {
           <Button
                 w="7rem"    
                 isDisabled={step === 3}
+            
                 onClick={() => {
                   setStep(step + 1);
                   if (step === 3) {

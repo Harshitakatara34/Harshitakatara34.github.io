@@ -11,14 +11,14 @@ import Contact from './Components/Contact';
 function App() {
   return (
     <div style={{marginTop:'0px'}} >
-      <Navbar/>
-      <Home/>
-      <About/>
-      <Skills/>
-      <Projects/>
+      <Navbar id="nav-menu"/>
+      <Home id="home"/>
+      <About id="about" class="about-section"/>
+      <Skills id="skills"/>
+      <Projects id="projects"/>
       <Stats/>
-      <Contact/>
-      
+      <Contact id="contact"/>
+     
     </div>
   );
 }

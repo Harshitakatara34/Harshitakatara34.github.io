@@ -56,7 +56,7 @@ export default function Navbar() {
   console.log(colorMode);
   function handleResume() {
     window.open(
-      `https://drive.google.com/file/d/1mVPnT2sRQPy4HyAokWMWxDB3YPvpagoW/view?usp=share_link`
+      `https://drive.google.com/file/d/1AE6zfi9vIbu6vYAjDuJtJd2ULelyJdwV/view?usp=share_link`
     );
   }
   return (
@@ -148,7 +148,7 @@ export default function Navbar() {
 
               <Link
                 // id="resume-link-1"
-                href="Parbhat_Resume.pdf"
+                href="Harshita_katara.pdf"
                 download
                 onClick={handleResume}
                 target="_blank"

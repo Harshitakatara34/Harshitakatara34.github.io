@@ -89,7 +89,7 @@ const About = () => {
                 textAlign={"center"}
                 class="home-img"
                 borderRadius="20%"
-                src={"PP.jpg"}
+                src={""}
                 // h="350px"
                 // w="350px"
                 alt="some good alt text"
