@@ -22,7 +22,7 @@ import {
 import { MoonIcon, SunIcon, HamburgerIcon } from "@chakra-ui/icons";
 import { BiDownload } from "react-icons/bi";
 import DrawerExample from "./SideBar";
-
+import Resume from "../Image/Harshita_Katara_Resume.pdf"
 const NavLink = ({ children }) => (
   <Link
     px={2}
@@ -55,9 +55,7 @@ export default function Navbar() {
 
   console.log(colorMode);
   function handleResume() {
-    window.open(
-      `https://drive.google.com/file/d/1AE6zfi9vIbu6vYAjDuJtJd2ULelyJdwV/view?usp=share_link`
-    );
+   window.open(`${Resume}`)
   }
   return (
     <>
@@ -147,8 +145,9 @@ export default function Navbar() {
               </Button>
 
               <Link
-                // id="resume-link-1"
-                href="Harshita_katara.pdf"
+               id="resume-link-1"
+                href={Resume}
+                className="nav-link resume"
                 download
                 onClick={handleResume}
                 target="_blank"

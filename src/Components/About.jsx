@@ -17,7 +17,8 @@ import {
   Flex,
   Button,
 } from "@chakra-ui/react";
-
+import photo from "../Image/Harshita_katara_img.png"
+console.log(photo)
 const BlogTags = (props) => {
   return (
     <HStack spacing={2} marginTop={props.marginTop}>
@@ -89,7 +90,7 @@ const About = () => {
                 textAlign={"center"}
                 class="home-img"
                 borderRadius="20%"
-                src={""}
+                src={photo}
                 // h="350px"
                 // w="350px"
                 alt="some good alt text"

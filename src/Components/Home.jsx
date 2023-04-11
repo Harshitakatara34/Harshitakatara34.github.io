@@ -19,9 +19,10 @@ import {
   IoLogoBitcoin,
   IoSearchSharp,
 } from "react-icons/io5";
+import photo from "../Image/Harshita_katara_img.png"
 import { ReactElement } from "react";
 import { BiDownload } from "react-icons/bi";
-
+import Resume from "../Image/Harshita_Katara_Resume.pdf"
 const Feature = ({ text, icon, iconBg }) => {
   return (
     <Stack direction={"row"} align={"center"}>
@@ -44,7 +45,7 @@ export default function Home() {
   const { colorMode, toggleColorMode } = useColorMode();
   function handleResume() {
     window.open(
-      `https://drive.google.com/file/d/1mVPnT2sRQPy4HyAokWMWxDB3YPvpagoW/view?usp=share_link`
+     `${Resume}`
     );
   }
   return (
@@ -103,14 +104,15 @@ export default function Home() {
                 }
               >
                 <Link
-                  // id="resume-link-2"
-                  href="Harshita_Resume.pdf"
-                  id="resume-button-2"
+                  id="resume-link-2"
+                  href={Resume}
+                  // id="resume-button-2"
+                  className="nav-link resume"
                   download
                   onClick={handleResume}
                   target="_blank"
                 >
-                  <Button colorScheme="teal" size="md">
+                  <Button colorScheme="teal" size="md" id="resume-button-2">
                     <Text mr={"4px"}>
                       Resume
                       <BiDownload />
@@ -197,11 +199,11 @@ export default function Home() {
             m="10px"
           >
             <Image
-              w={{ base: "260px", lg: "400px" }}
+              w={{ base: "200px", lg: "300px" }}
               mt="-10px"
               rounded={"md"}
               alt={"feature image"}
-              src={"https://cdn.dribbble.com/users/17707/screenshots/2413754/rrr.gif"}
+              src={photo}
               objectFit={"cover"}
             />
           </Flex>

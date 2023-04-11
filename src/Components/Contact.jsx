@@ -1,145 +1,69 @@
-import { ReactNode } from "react";
-import ContactForm from "../Helper/ContactForm"
+import React from 'react'
+// import { HiOutlineMail } from "react-icons/hi";
+// import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+ import {HiOutlineMail} from "react-icons/hi";
+//  import { BsFillPersonLinesFill} from "react-icons/bs";
 import {
-  Box,
-  Flex,
-  Heading,
-  Text,
-  Stack,
-  Container,
-  Avatar,
-  useColorModeValue,
-} from "@chakra-ui/react";
+  FormControl,
+  FormLabel,
+  FormErrorMessage,
+  FormHelperText,
+  Input,
+  Textarea,
+  Button
+} from '@chakra-ui/react'
 
+import { Box, Heading, SimpleGrid } from "@chakra-ui/react";
 
-const Testimonial = ({ children }) => {
-  return <Box>{children}</Box>;
-};
-
-const TestimonialContent = ({ children }) => {
+const Contact = () => {
   return (
-    <Stack
-      id="contact"
-      bg={useColorModeValue("white", "gray.800")}
-      boxShadow={"lg"}
-      p={8}
-      rounded={"xl"}
-      align={"center"}
-      pos={"relative"}
-      _after={{
-        content: `""`,
-        w: 0,
-        h: 0,
-        borderLeft: "solid transparent",
-        borderLeftWidth: 16,
-        borderRight: "solid transparent",
-        borderRightWidth: 16,
-        borderTop: "solid",
-        borderTopWidth: 16,
-        borderTopColor: useColorModeValue("white", "gray.800"),
-        pos: "absolute",
-        bottom: "-16px",
-        left: "50%",
-        transform: "translateX(-50%)",
-      }}
-    >
-      {children}
-    </Stack>
-  );
-};
-
-const TestimonialHeading = ({ children }) => {
-  return (
-    <Heading as={"h3"} fontSize={"xl"}>
-      {children}
-    </Heading>
-  );
-};
-
-const TestimonialText = ({ children }) => {
-  return (
-    <Text
-      textAlign={"center"}
-      color={useColorModeValue("gray.600", "gray.400")}
-      fontSize={"sm"}
-    >
-      {children}
-    </Text>
-  );
-};
-
-const TestimonialAvatar = ({ src, name, title }) => {
-  return (
-    <Flex align={"center"} mt={8} direction={"column"}>
-      <Avatar src={src} alt={name} mb={2} />
-      <Stack spacing={-1} align={"center"}>
-        <Text fontWeight={600}>{name}</Text>
-        <Text fontSize={"sm"} color={useColorModeValue("gray.600", "gray.400")}>
-          {title}
-        </Text>
-      </Stack>
-    </Flex>
-  );
-};
-
-export default function Contact() {
-  return (
-    <Box
-      id="contact"
-      bg={useColorModeValue("gray.100", "gray.700")}
-      pt="30px"
-      mt="100px"
-    >
-      <Container maxW={"7xl"} py={16} as={Stack} spacing={12}>
-        <Stack spacing={0} align={"center"}>
-          <Heading>Contact Me</Heading>
-          <Text>We have been working with clients around the world</Text>
-        </Stack>
-        <Flex>
-          <Stack
-            w={"50%"}
-            display={{ base: "none", md: "block" }}
-            mr="20px"
-            mt="30px"
-            direction={"column"}
-            spacing={{ base: 10, md: 4, lg: 10 }}
+    <Box id="contact" textAlign={"center"} pt="130px" mt={"10"} style={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column" ,gap:"5px"}}>
+    <Heading>Contact</Heading>
+    <h4>Submit the form below to get in touch with me!!</h4>
+    <FormControl as="form" action="https://getform.io/f/28236467-0f44-496b-80a3-8b3034c09c92" method="POST" style={{width:"40%",textAlign:"center"}}>
+      <FormLabel htmlFor="name">Name</FormLabel>
+      <Input type='text' id="name" name="name" placeholder='Enter Your Name' />
+      <FormLabel htmlFor="email">Email address</FormLabel>
+      <Input type='email' id="email" name="email" placeholder='Enter Your Email'/>
+      <FormLabel htmlFor="number">Mobile Number</FormLabel>
+      <Input type='number' id="number" name="number"  placeholder='Enter Your Mobile Number' />
+      <FormLabel htmlFor="message">Message</FormLabel>
+      <Textarea id="message" name="message"  placeholder='Enter Your Message'/>
+      <FormHelperText>We'll never share your details.</FormHelperText>
+      <Button type="submit" style={{backgroundColor:"skyblue",color:"black",marginTop:"10px"}}>Submit</Button>
+    </FormControl>
+    <div style={{ display: "flex", justifyContent: "center", flexDirection: "row", width:"50%", gap:"2%",marginTop:"10px" }}>
+          <a 
+          href="khushikatara041@gmail.com" >
+             <>
+            <HiOutlineMail size={60}/>
+             </>
+          </a>
+          <a 
+          href='https://www.linkedin.com/in/harshita-katara-09904b246/'
+         
           >
-            <Testimonial>
-              <TestimonialContent>
-                <TestimonialHeading>Efficient Collaborating</TestimonialHeading>
-                <TestimonialText>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Auctor neque sed imperdiet nibh lectus feugiat nunc sem.
-                </TestimonialText>
-              </TestimonialContent>
-              <TestimonialAvatar
-                src={
-                  "https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80"
-                }
-                name={"Jane Cooper"}
-                title={"CEO at ABC Corporation"}
-              />
-            </Testimonial>
-            <Testimonial>
-              <TestimonialContent>
-                <TestimonialHeading>Intuitive Design</TestimonialHeading>
-                <TestimonialText>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Auctor neque sed imperdiet nibh lectus feugiat nunc sem.
-                </TestimonialText>
-              </TestimonialContent>
-              <TestimonialAvatar
-                src={
-                  "https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80"
-                }
-                name={"Jane Cooper"}
-                title={"CEO at ABC Corporation"}
-              />
-            </Testimonial>
-          </Stack>
-          <ContactForm />
-        </Flex>
-      </Container>
-    </Box>
-  );
+             <>
+            <FaLinkedin size={50}/>
+             </>
+          </a>
+      
+          <a 
+          href='https://github.com/harshitakatara34'
+          >
+             <>
+            <FaGithub size={50}/>
+             </>
+          </a>
+       
+
+      
+    
+    </div>
+  </Box>
+  
+  )
 }
+
+export default Contact

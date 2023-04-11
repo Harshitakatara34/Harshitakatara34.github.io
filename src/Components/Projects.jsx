@@ -1,7 +1,9 @@
 import { Box, Heading, SimpleGrid } from "@chakra-ui/react";
 import React from "react";
-import HelperProject from "../Helper/HelperProject";
-
+import HelperProject from "./helper";
+import img1 from "../Image/img1.png"
+import img2 from "../Image/img2.png"
+console.log(img1)
 const Projects = () => {
   return (
     // Passing `columns={[2, null, 3]}` and `columns={{sm: 2, md: 3}}`
@@ -28,8 +30,7 @@ const Projects = () => {
 
 let data = [
   {
-    image:
-    "https://cdn-useast1.kapwing.com/final_64198ad93c5dc001fa96523b_509122.png",
+    image:`${img1}`,
     title: "Liscious Clone",
     desc: "It is an e-commerce website for ordering chicken or non-veg food",
     techStack: ["HTML", "CSS", "JavaScript"],
@@ -37,12 +38,27 @@ let data = [
     deploy: "https://superb-haupia-a7c7f2.netlify.app/",
   },
   {
-    image:
-      "blob:https://www.kapwing.com/b242d698-bedd-41f2-a71b-41ce41f03f14blob:https://www.kapwing.com/b242d698-bedd-41f2-a71b-41ce41f03f14",
+    image:`${img2}`,
     desc: "It is a hotel booking website for vacations",
     title: "Expedia Clone",
     techStack: ["HTML", "CSS", "JavaScript"],
-    github: "https://github.com/Harshitakatara34/ragged-tank-492.git5",
+    github: "https://github.com/Harshitakatara34/ragged-tank-492.git",
+    deploy: "https://golden-sorbet-745819.netlify.app/",
+  },
+  {
+    image:`${img1}`,
+    title: "Liscious Clone",
+    desc: "It is an e-commerce website for ordering chicken or non-veg food",
+    techStack: ["HTML", "CSS", "JavaScript"],
+    github: "https://github.com/Harshitakatara34/defective-impulse-1904.git",
+    deploy: "https://superb-haupia-a7c7f2.netlify.app/",
+  },
+  {
+    image:`${img2}`,
+    desc: "It is a hotel booking website for vacations",
+    title: "Expedia Clone",
+    techStack: ["HTML", "CSS", "JavaScript"],
+    github: "https://github.com/Harshitakatara34/ragged-tank-492.git",
     deploy: "https://golden-sorbet-745819.netlify.app/",
   },
   ];
