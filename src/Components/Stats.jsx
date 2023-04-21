@@ -46,7 +46,7 @@ const Stats = () => {
             // border={"3px solid white"}
             w={{ base: "100%", md: "30%" }}
             mt={{ base: "10px", md: "0px" }}
-            href="https://github.com/ParbhatKataria1"
+            href="https://github.com/Harshitakatara34"
             target="_blank"
           >
             <Flex justifyContent={"center"}>
@@ -61,7 +61,7 @@ const Stats = () => {
             // border={"3px solid white"}
             w={{ base: "100%", md: "31%" }}
             mt={{ base: "10px", md: "0px" }}
-            href="https://github.com/ParbhatKataria1"
+            href="https://github.com/Harshitakatara34"
             target="_blank"
           >
             <Flex justifyContent={"center"}>
