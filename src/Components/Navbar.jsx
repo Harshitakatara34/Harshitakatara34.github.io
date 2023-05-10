@@ -52,8 +52,10 @@ export default function Navbar() {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
-
-  console.log(colorMode);
+function handleResume(){
+  return window.open("https://drive.google.com/file/d/1CDMGHD_X1NggoBP3n1CS5fIbXdXVvnqZ/view?usp=share_link")
+}
+  // console.log(colorMode);
   
   return (
     <>
@@ -162,7 +164,8 @@ export default function Navbar() {
                   </Text>
                 </Button>
               </Link> */}
-              <button   id="resume-button-1"
+              <button id="resume-button-1"
+                 className="nav-link resume"
                       style={{
                         backgroundColor: "#ab364d",
                         color: "white",
@@ -173,7 +176,7 @@ export default function Navbar() {
                         borderRadius: "15px",
                         // border: "3px solid rgba(11,12,16,0.4)",
                       }}
-                      onClick={()=> window.open("https://drive.google.com/file/d/1CDMGHD_X1NggoBP3n1CS5fIbXdXVvnqZ/view?usp=share_link")}
+                      onClick={handleResume}
 
                     >
                       <a 
@@ -204,7 +207,7 @@ export default function Navbar() {
             >
               <DrawerExample
                 handleClickScroll={handleClickScroll}
-                // handleResume={handleResume}
+                handleResume={handleResume}
               />
             </Flex>
           </Box>

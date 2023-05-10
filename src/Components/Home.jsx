@@ -43,11 +43,13 @@ const Feature = ({ text, icon, iconBg }) => {
 
 export default function Home() {
   const { colorMode, toggleColorMode } = useColorMode();
- 
+  function handleResume(){
+    return window.open("https://drive.google.com/file/d/1CDMGHD_X1NggoBP3n1CS5fIbXdXVvnqZ/view?usp=share_link")
+  }
   return (
     <>
-      <Box id="home" h="30px"></Box>
-      <Container
+      <Box h="30px"></Box>
+      <Container id="home"
         maxW={{ base: "95%", sm: "80%" }}
         m="auto"
         mt={"40px"}
@@ -121,6 +123,7 @@ export default function Home() {
               </Link> */}
 
               <button id="resume-button-2"
+                 className="nav-link resume"
                       style={{
                         backgroundColor: "#ab364d",
                         color: "white",
@@ -131,7 +134,8 @@ export default function Home() {
                         borderRadius: "15px",
                         // border: "3px solid rgba(11,12,16,0.4)",
                       }}
-                      onClick={()=> window.open("https://drive.google.com/file/d/1CDMGHD_X1NggoBP3n1CS5fIbXdXVvnqZ/view?usp=share_link")}
+                      onClick={handleResume}
+
                     >
                       <a 
                         id="resume-link-2"

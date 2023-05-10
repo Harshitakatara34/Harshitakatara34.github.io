@@ -18,8 +18,8 @@ import {
   useDisclosure,
   useColorMode,
 } from "@chakra-ui/react";
-
-export default function DrawerExample({ handleClickScroll }) {
+import Resume from "./Harshita_Katara_Resume.pdf"
+export default function DrawerExample({ handleClickScroll, handleResume }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
   const btnRef = useRef();
@@ -43,8 +43,8 @@ export default function DrawerExample({ handleClickScroll }) {
               <Button onClick={toggleColorMode}>
                 {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
               </Button>
-
-              {/* <Link
+{/* 
+              <Link
                 id="resume-link-1"
                 href="Harshita_Katara_Resume.pdf"
                 download
@@ -66,7 +66,32 @@ export default function DrawerExample({ handleClickScroll }) {
                   </Flex>
                 </Button>
               </Link> */}
-
+              
+              <button 
+                      style={{
+                        backgroundColor: "#ab364d",
+                        color: "white",
+                        fontWeight: "bold",
+                        fontSize: "15px",
+                        cursor: "pointer",
+                        padding: "8px 15px",
+                        borderRadius: "15px",
+                        // border: "3px solid rgba(11,12,16,0.4)",
+                      }}
+                      onClick={()=> window.open("https://drive.google.com/file/d/1CDMGHD_X1NggoBP3n1CS5fIbXdXVvnqZ/view?usp=share_link")}
+                    >
+                      <a 
+                     
+                        href={Resume}
+                        download="Harshita-katara-Resume.pdf"
+                        style={{
+                          textDecoration: "none",
+                          color: "inherit",
+                        }}
+                      >
+                        Resume
+                      </a>
+                    </button>
             </Flex>
           </DrawerHeader>
 
