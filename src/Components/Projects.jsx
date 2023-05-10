@@ -4,6 +4,7 @@ import HelperProject from "./helper";
 import img1 from "../Image/img1.png"
 import img2 from "../Image/img2.png"
 import img3 from "../Image/img3.png"
+import img4 from "../Image/img4.png"
 console.log(img1)
 const Projects = () => {
   return (
@@ -31,7 +32,7 @@ const Projects = () => {
 
 let data = [
   {
-    image:`${img3}`,
+    image:`${img1}`,
     title: "Basspro Clone",
     desc: "It is an e-commerce website for ordering fishing accessories",
     techStack: ["HTML", "CSS", "JavaScript","React","Redux","Chakra-UI"],
@@ -40,6 +41,14 @@ let data = [
   },
   {
     image:`${img2}`,
+    desc: "It is an e-commerce website for buying diamond jewelleries",
+    title: "Expedia Clone",
+    techStack: ["HTML", "CSS", "JavaScript","React","Redux","Chakra-UI","Node.js","Express.js","Mongoose"],
+    github: "https://github.com/Harshitakatara34/ragged-tank-492.git",
+    deploy: "https://golden-sorbet-745819.netlify.app/",
+  },
+  {
+    image:`${img3}`,
     desc: "It is a hotel booking website for vacations",
     title: "Expedia Clone",
     techStack: ["HTML", "CSS", "JavaScript"],
@@ -47,15 +56,7 @@ let data = [
     deploy: "https://golden-sorbet-745819.netlify.app/",
   },
   {
-    image:`${img2}`,
-    desc: "It is a hotel booking website for vacations",
-    title: "Expedia Clone",
-    techStack: ["HTML", "CSS", "JavaScript"],
-    github: "https://github.com/Harshitakatara34/ragged-tank-492.git",
-    deploy: "https://golden-sorbet-745819.netlify.app/",
-  },
-  {
-    image:`${img1}`,
+    image:`${img4}`,
     title: "Liscious Clone",
     desc: "It is an e-commerce website for ordering chicken or non-veg food",
     techStack: ["HTML", "CSS", "JavaScript"],

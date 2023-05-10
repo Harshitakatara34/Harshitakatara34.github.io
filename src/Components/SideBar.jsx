@@ -67,15 +67,15 @@ export default function DrawerExample({ handleClickScroll, handleResume }) {
                 </Button>
               </Link> */}
               
-              <button 
+              <Button colorScheme="teal" variant="solid"
                       style={{
-                        backgroundColor: "#ab364d",
-                        color: "white",
+                       
                         fontWeight: "bold",
                         fontSize: "15px",
                         cursor: "pointer",
                         padding: "8px 15px",
                         borderRadius: "15px",
+                        marginLeft:"6px"
                         // border: "3px solid rgba(11,12,16,0.4)",
                       }}
                       onClick={()=> window.open("https://drive.google.com/file/d/1CDMGHD_X1NggoBP3n1CS5fIbXdXVvnqZ/view?usp=share_link")}
@@ -91,7 +91,7 @@ export default function DrawerExample({ handleClickScroll, handleResume }) {
                       >
                         Resume
                       </a>
-                    </button>
+                    </Button>
             </Flex>
           </DrawerHeader>
 

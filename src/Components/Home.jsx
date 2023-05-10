@@ -122,11 +122,10 @@ export default function Home() {
                 </Button>
               </Link> */}
 
-              <button id="resume-button-2"
+              <Button id="resume-button-2"  colorScheme="teal" variant="solid"
                  className="nav-link resume"
                       style={{
-                        backgroundColor: "#ab364d",
-                        color: "white",
+                      
                         fontWeight: "bold",
                         fontSize: "15px",
                         cursor: "pointer",
@@ -148,7 +147,7 @@ export default function Home() {
                       >
                         Resume
                       </a>
-                    </button>
+                    </Button>
 
                 <Flex justifyContent={"space-around"} w="25%">
                   <Link

@@ -164,11 +164,11 @@ function handleResume(){
                   </Text>
                 </Button>
               </Link> */}
-              <button id="resume-button-1"
+              <Button id="resume-button-1"
                  className="nav-link resume"
+                 colorScheme="teal" variant="solid"
                       style={{
-                        backgroundColor: "#ab364d",
-                        color: "white",
+                      
                         fontWeight: "bold",
                         fontSize: "15px",
                         cursor: "pointer",
@@ -190,7 +190,7 @@ function handleResume(){
                       >
                         Resume
                       </a>
-                    </button>
+                    </Button>
               <Button onClick={toggleColorMode}>
                 {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
               </Button>
