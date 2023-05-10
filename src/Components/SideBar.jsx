@@ -19,7 +19,7 @@ import {
   useColorMode,
 } from "@chakra-ui/react";
 
-export default function DrawerExample({ handleClickScroll, handleResume }) {
+export default function DrawerExample({ handleClickScroll }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
   const btnRef = useRef();
@@ -44,9 +44,9 @@ export default function DrawerExample({ handleClickScroll, handleResume }) {
                 {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
               </Button>
 
-              <Link
+              {/* <Link
                 id="resume-link-1"
-                href="Parbhat_Resume.pdf"
+                href="Harshita_Katara_Resume.pdf"
                 download
                 onClick={handleResume}
                 target="_blank"
@@ -65,7 +65,8 @@ export default function DrawerExample({ handleClickScroll, handleResume }) {
                     </Button>
                   </Flex>
                 </Button>
-              </Link>
+              </Link> */}
+
             </Flex>
           </DrawerHeader>
 

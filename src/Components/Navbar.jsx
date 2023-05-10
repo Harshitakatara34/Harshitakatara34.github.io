@@ -22,7 +22,7 @@ import {
 import { MoonIcon, SunIcon, HamburgerIcon } from "@chakra-ui/icons";
 import { BiDownload } from "react-icons/bi";
 import DrawerExample from "./SideBar";
-import Resume from "../Image/Harshita_Katara_Resume.pdf"
+import Resume from "./Harshita_Katara_Resume.pdf"
 const NavLink = ({ children }) => (
   <Link
     px={2}
@@ -54,9 +54,7 @@ export default function Navbar() {
   };
 
   console.log(colorMode);
-  function handleResume() {
-   window.open(`${Resume}`)
-  }
+  
   return (
     <>
       <Box
@@ -144,7 +142,7 @@ export default function Navbar() {
                 <Link className="nav-link contact">Contact</Link>
               </Button>
 
-              <Link
+              {/* <Link
                id="resume-link-1"
                 href={Resume}
                 className="nav-link resume"
@@ -163,7 +161,33 @@ export default function Navbar() {
                     <BiDownload />
                   </Text>
                 </Button>
-              </Link>
+              </Link> */}
+              <button   id="resume-button-1"
+                      style={{
+                        backgroundColor: "#ab364d",
+                        color: "white",
+                        fontWeight: "bold",
+                        fontSize: "15px",
+                        cursor: "pointer",
+                        padding: "8px 15px",
+                        borderRadius: "15px",
+                        // border: "3px solid rgba(11,12,16,0.4)",
+                      }}
+                      onClick={()=> window.open("https://drive.google.com/file/d/1CDMGHD_X1NggoBP3n1CS5fIbXdXVvnqZ/view?usp=share_link")}
+
+                    >
+                      <a 
+                        id="resume-link-1"
+                        href={Resume}
+                        download="Harshita-katara-Resume.pdf"
+                        style={{
+                          textDecoration: "none",
+                          color: "inherit",
+                        }}
+                      >
+                        Resume
+                      </a>
+                    </button>
               <Button onClick={toggleColorMode}>
                 {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
               </Button>
@@ -180,7 +204,7 @@ export default function Navbar() {
             >
               <DrawerExample
                 handleClickScroll={handleClickScroll}
-                handleResume={handleResume}
+                // handleResume={handleResume}
               />
             </Flex>
           </Box>

@@ -22,7 +22,7 @@ import {
 import photo from "../Image/Harshita_katara_img.png"
 import { ReactElement } from "react";
 import { BiDownload } from "react-icons/bi";
-import Resume from "../Image/Harshita_Katara_Resume.pdf"
+import Resume from "./Harshita_Katara_Resume.pdf"
 const Feature = ({ text, icon, iconBg }) => {
   return (
     <Stack direction={"row"} align={"center"}>
@@ -43,11 +43,7 @@ const Feature = ({ text, icon, iconBg }) => {
 
 export default function Home() {
   const { colorMode, toggleColorMode } = useColorMode();
-  function handleResume() {
-    window.open(
-     `${Resume}`
-    );
-  }
+ 
   return (
     <>
       <Box id="home" h="30px"></Box>
@@ -103,22 +99,53 @@ export default function Home() {
                   />
                 }
               >
-                <Link
-                  id="resume-link-2"
-                  href={Resume}
-                  // id="resume-button-2"
+              {/* <Link
+               id="resume-link-2"
+                href={Resume}
+                className="nav-link resume"
+                download
+                onClick={handleResume}
+                target="_blank"
+              >
+                <Button
                   className="nav-link resume"
-                  download
-                  onClick={handleResume}
-                  target="_blank"
+                  id="resume-button-2"
+                  colorScheme="teal"
+                  size="md"
                 >
-                  <Button colorScheme="teal" size="md" id="resume-button-2">
-                    <Text mr={"4px"}>
-                      Resume
-                      <BiDownload />
-                    </Text>
-                  </Button>
-                </Link>
+                  <Text mr={"4px"}>
+                    Resume
+                    <BiDownload />
+                  </Text>
+                </Button>
+              </Link> */}
+
+              <button id="resume-button-2"
+                      style={{
+                        backgroundColor: "#ab364d",
+                        color: "white",
+                        fontWeight: "bold",
+                        fontSize: "15px",
+                        cursor: "pointer",
+                        padding: "8px 15px",
+                        borderRadius: "15px",
+                        // border: "3px solid rgba(11,12,16,0.4)",
+                      }}
+                      onClick={()=> window.open("https://drive.google.com/file/d/1CDMGHD_X1NggoBP3n1CS5fIbXdXVvnqZ/view?usp=share_link")}
+                    >
+                      <a 
+                        id="resume-link-2"
+                        href={Resume}
+                        download="Harshita-katara-Resume.pdf"
+                        style={{
+                          textDecoration: "none",
+                          color: "inherit",
+                        }}
+                      >
+                        Resume
+                      </a>
+                    </button>
+
                 <Flex justifyContent={"space-around"} w="25%">
                   <Link
                     m="5px"

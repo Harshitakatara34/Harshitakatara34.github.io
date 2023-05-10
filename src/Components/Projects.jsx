@@ -3,6 +3,7 @@ import React from "react";
 import HelperProject from "./helper";
 import img1 from "../Image/img1.png"
 import img2 from "../Image/img2.png"
+import img3 from "../Image/img3.png"
 console.log(img1)
 const Projects = () => {
   return (
@@ -14,7 +15,7 @@ const Projects = () => {
         justifyContent="center"
         textAlign={"center"}
         m={"auto"}
-        columns={{ base: "1", md: "2", xl: "3" }}
+        columns={{ base: "1", md: "2", xl: "2" }}
         spacing={{ base: "10px", md: "40px" }}
         w={{ base: "95%", md: "81%" }}
         marginTop="70px"
@@ -30,12 +31,20 @@ const Projects = () => {
 
 let data = [
   {
-    image:`${img1}`,
-    title: "Liscious Clone",
-    desc: "It is an e-commerce website for ordering chicken or non-veg food",
+    image:`${img3}`,
+    title: "Basspro Clone",
+    desc: "It is an e-commerce website for ordering fishing accessories",
+    techStack: ["HTML", "CSS", "JavaScript","React","Redux","Chakra-UI"],
+    github: "https://github.com/Harshitakatara34/auspicious-sea-8816",
+    deploy: "https://tackle-and-trail.netlify.app/",
+  },
+  {
+    image:`${img2}`,
+    desc: "It is a hotel booking website for vacations",
+    title: "Expedia Clone",
     techStack: ["HTML", "CSS", "JavaScript"],
-    github: "https://github.com/Harshitakatara34/defective-impulse-1904.git",
-    deploy: "https://superb-haupia-a7c7f2.netlify.app/",
+    github: "https://github.com/Harshitakatara34/ragged-tank-492.git",
+    deploy: "https://golden-sorbet-745819.netlify.app/",
   },
   {
     image:`${img2}`,
@@ -53,14 +62,7 @@ let data = [
     github: "https://github.com/Harshitakatara34/defective-impulse-1904.git",
     deploy: "https://superb-haupia-a7c7f2.netlify.app/",
   },
-  {
-    image:`${img2}`,
-    desc: "It is a hotel booking website for vacations",
-    title: "Expedia Clone",
-    techStack: ["HTML", "CSS", "JavaScript"],
-    github: "https://github.com/Harshitakatara34/ragged-tank-492.git",
-    deploy: "https://golden-sorbet-745819.netlify.app/",
-  },
+
   ];
 
 export default Projects;
