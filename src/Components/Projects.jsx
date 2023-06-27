@@ -42,10 +42,10 @@ let data = [
   {
     image:`${img2}`,
     desc: "It is an e-commerce website for buying diamond jewelleries",
-    title: "Expedia Clone",
+    title: "CaratLane Clone",
     techStack: ["HTML", "CSS", "JavaScript","React","Redux","Chakra-UI","Node.js","Express.js","Mongoose"],
     github: "https://github.com/Harshitakatara34/ragged-tank-492.git",
-    deploy: "https://golden-sorbet-745819.netlify.app/",
+    deploy: "https://jewellane.vercel.app/",
   },
   {
     image:`${img3}`,

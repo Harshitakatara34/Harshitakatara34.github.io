@@ -229,11 +229,11 @@ export default function Home() {
             m="10px"
           >
             <Image
-              w={{ base: "200px", lg: "300px" }}
+              w={{ base: "300px", lg: "400px" }}
               mt="-10px"
               rounded={"md"}
               alt={"feature image"}
-              src={photo}
+              src="https://cdn.dribbble.com/users/17707/screenshots/2413754/rrr.gif"
               objectFit={"cover"}
             />
           </Flex>

@@ -89,10 +89,10 @@ const About = () => {
               <Image
                 textAlign={"center"}
                 class="home-img"
-                borderRadius="20%"
+                borderRadius="5%"
                 src={photo}
-                // h="350px"
-                // w="350px"
+                h="350px"
+                w="350px"
                 alt="some good alt text"
                 objectFit="cover"
               />
