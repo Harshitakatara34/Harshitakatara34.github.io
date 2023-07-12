@@ -41,7 +41,7 @@ function HelperProject({ image, title, techStack, desc, github, deploy }) {
         </Link>
       </Box>
 
-      <Box p="6">
+      <Box p="7">
         <Box display="flex" flexWrap={"wrap"} alignItems="baseline">
           {techStack?.map((el, ind) => {
             return (
@@ -82,7 +82,7 @@ function HelperProject({ image, title, techStack, desc, github, deploy }) {
           fontWeight="semibold"
           as="h4"
           lineHeight="tight"
-          noOfLines={2}
+          noOfLines={6}
           textAlign="left"
           className="project-description"
         >
