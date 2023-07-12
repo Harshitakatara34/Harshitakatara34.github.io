@@ -34,14 +34,14 @@ let data = [
   {
     image:`${img1}`,
     title: "Basspro Clone",
-    desc: "It is an e-commerce website for ordering fishing accessories",
+    desc: "Bass Pro Shops is the largest trusted source for quality fishing, hunting, boating and outdoor sporting goods. It is owned by Johnny Morris, which is a subsidiary of BPS Direct, L.L.C, one of the largest organizations in the U.S.A. They offer a wide range of fishing, hunting and boating gear. They also offer a curated selection of international collections. This was a Collaborative Project from Masai School in Construct Week with a span of 5 days.",
     techStack: ["HTML", "CSS", "JavaScript","React","Redux","Chakra-UI"],
     github: "https://github.com/Harshitakatara34/auspicious-sea-8816",
     deploy: "https://tackle-and-trail.netlify.app/",
   },
   {
     image:`${img2}`,
-    desc: "It is an e-commerce website for buying diamond jewelleries",
+    desc: "Jewel Lane is a clone of an e-commerce website Caratlane which sells the best gold & diamond jewellery. They offer a wide range of rings, earrings, bangles, bracelets and necklaces at the best price.",
     title: "CaratLane Clone",
     techStack: ["HTML", "CSS", "JavaScript","React","Redux","Chakra-UI","Node.js","Express.js","Mongoose"],
     github: "https://github.com/Harshitakatara34/pointless-belief-3937",
@@ -49,7 +49,7 @@ let data = [
   },
   {
     image:`${img3}`,
-    desc: "It is a hotel booking website for vacations",
+    desc: "It is a clone of e-commerce website expedia where user can book hotels and also offers some vacational packages",
     title: "Expedia Clone",
     techStack: ["HTML", "CSS", "JavaScript"],
     github: "https://github.com/Harshitakatara34/ragged-tank-492.git",
@@ -58,7 +58,7 @@ let data = [
   {
     image:`${img4}`,
     title: "Liscious Clone",
-    desc: "It is an e-commerce website for ordering chicken or non-veg food",
+    desc: "It is an e-commerce website where users can place orders for Poultry and Fish items.",
     techStack: ["HTML", "CSS", "JavaScript"],
     github: "https://github.com/Harshitakatara34/defective-impulse-1904.git",
     deploy: "https://superb-haupia-a7c7f2.netlify.app/",
