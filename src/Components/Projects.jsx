@@ -44,7 +44,7 @@ let data = [
     desc: "It is an e-commerce website for buying diamond jewelleries",
     title: "CaratLane Clone",
     techStack: ["HTML", "CSS", "JavaScript","React","Redux","Chakra-UI","Node.js","Express.js","Mongoose"],
-    github: "https://github.com/Harshitakatara34/ragged-tank-492.git",
+    github: "https://github.com/Harshitakatara34/pointless-belief-3937",
     deploy: "https://jewellane.vercel.app/",
   },
   {
