@@ -78,16 +78,18 @@ function HelperProject({ image, title, techStack, desc, github, deploy }) {
         </Text>
 
         <Text
-          mt="4"
-          fontWeight="semibold"
-          as="h4"
-          lineHeight="tight"
-          noOfLines={6}
-          textAlign="left"
-          className="project-description"
-        >
-          {desc}
-        </Text>
+  mt="4"
+  fontWeight="semibold"
+  as="h4"
+  lineHeight="tight"
+  noOfLines={10}
+  textAlign="left"
+  className="project-description"
+  style={{ overflow: 'hidden', whiteSpace: 'pre-line' }}
+>
+  {desc}
+</Text>
+
 
         <Flex mt={"4"} justifyContent={"space-between"}>
           <Link class="project-github-link" href={github} isExternal>

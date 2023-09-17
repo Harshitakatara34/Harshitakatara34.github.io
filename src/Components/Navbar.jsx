@@ -53,7 +53,7 @@ export default function Navbar() {
     }
   };
 function handleResume(){
-  return window.open("https://drive.google.com/file/d/1CDMGHD_X1NggoBP3n1CS5fIbXdXVvnqZ/view?usp=share_link")
+  return window.open("https://drive.google.com/file/d/12XdkbZJHYBS807iBOAZryNBuMY2JBfVP/view?usp=sharing")
 }
   // console.log(colorMode);
   

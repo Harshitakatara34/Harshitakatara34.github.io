@@ -1,15 +1,14 @@
 import { Box, Heading, SimpleGrid } from "@chakra-ui/react";
 import React from "react";
 import HelperProject from "./helper";
-import img1 from "../Image/img1.png"
-import img2 from "../Image/img2.png"
-import img3 from "../Image/img3.png"
-import img4 from "../Image/img4.png"
-console.log(img1)
+import img1 from "../Image/img1.png";
+import img2 from "../Image/img2.png";
+import img3 from "../Image/img3.png";
+import img4 from "../Image/img4.png";
+console.log(img1);
+
 const Projects = () => {
   return (
-    // Passing `columns={[2, null, 3]}` and `columns={{sm: 2, md: 3}}`
-    // will have the same effect.
     <Box id="projects" textAlign={"center"} pt="130px" mt={"10"}>
       <Heading>Projects</Heading>
       <SimpleGrid
@@ -21,6 +20,7 @@ const Projects = () => {
         w={{ base: "95%", md: "81%" }}
         marginTop="70px"
         marginBottom={"50px"}
+        minH="200px" // Set a minimum height for each child
       >
         {data.map((el, ind) => {
           return <HelperProject key={Date.now() + ind} {...el} />;
@@ -33,23 +33,23 @@ const Projects = () => {
 let data = [
   {
     image:`${img1}`,
-    title: "Basspro Clone",
-    desc: "Bass Pro Shops is the largest trusted source for quality fishing, hunting, boating and outdoor sporting goods.  They offer a wide range of fishing, hunting and boating gear. ",
+    title: "Tackle&Trail",
+    desc: "Discover Tackle&Trail, your ultimate source for premium fishing, hunting, boating, and outdoor sporting goods. We proudly offer a comprehensive selection of top-quality equipment and gear, ensuring that outdoor enthusiasts of all kinds find everything they need to embark on unforgettable adventures.",
     techStack: ["HTML", "CSS", "JavaScript","React","Redux","Chakra-UI"],
     github: "https://github.com/Harshitakatara34/auspicious-sea-8816",
     deploy: "https://tackle-and-trail.netlify.app/",
   },
   {
     image:`${img2}`,
-    desc: "Jewel Lane is a clone of an e-commerce website Caratlane which sells the best gold & diamond jewellery. They offer a wide range of rings, earrings, bangles, bracelets .",
-    title: "CaratLane Clone",
+    desc: "Jewel Lane, a Caratlane-inspired e-commerce destination, is your go-to for exquisite gold and diamond jewellery. Our extensive collection includes a stunning  rings,  earrings, bangles, and timeless bracelets, all meticulously crafted to reflect your unique style and grace.",
+    title: "JewelLane",
     techStack: ["HTML", "CSS", "JavaScript","React","Redux","Chakra-UI","Node.js","Express.js","Mongoose"],
     github: "https://github.com/Harshitakatara34/pointless-belief-3937",
     deploy: "https://jewellane.vercel.app/",
   },
   {
     image:`${img3}`,
-    desc: "It is a clone of e-commerce website expedia where user can book hotels and also offers some vacational packages",
+    desc: "Explore our Expedia-inspired e-commerce platform, where you can effortlessly book accommodations at a wide range of hotels and access enticing vacation packages. Plan your dream getaway with ease and embark on unforgettable journeys, all from the comfort of your screen.",
     title: "Expedia Clone",
     techStack: ["HTML", "CSS", "JavaScript"],
     github: "https://github.com/Harshitakatara34/ragged-tank-492.git",
@@ -57,8 +57,8 @@ let data = [
   },
   {
     image:`${img4}`,
-    title: "Liscious Clone",
-    desc: "It is an e-commerce website where users can place orders for Poultry and Fish items at best Price.",
+    title: "Licious Clone",
+    desc: "Chicken, your premier online marketplace for sourcing top-quality poultry and fish products at the most competitive prices. Our diverse range of offerings ensures that you can place orders conveniently and enjoy doorstep delivery of the freshest and finest options for your culinary delights.",
     techStack: ["HTML", "CSS", "JavaScript"],
     github: "https://github.com/Harshitakatara34/defective-impulse-1904.git",
     deploy: "https://superb-haupia-a7c7f2.netlify.app/",
