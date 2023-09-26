@@ -22,7 +22,7 @@ import {
 import { MoonIcon, SunIcon, HamburgerIcon } from "@chakra-ui/icons";
 import { BiDownload } from "react-icons/bi";
 import DrawerExample from "./SideBar";
-import Resume from "./Harshita_Katara_Resume.pdf"
+import Resume from "./Harshita-Katara-Resume.pdf";
 const NavLink = ({ children }) => (
   <Link
     px={2}
@@ -53,7 +53,7 @@ export default function Navbar() {
     }
   };
 function handleResume(){
-  return window.open("https://drive.google.com/file/d/12XdkbZJHYBS807iBOAZryNBuMY2JBfVP/view?usp=sharing")
+  return window.open("https://drive.google.com/file/d/1laXdjw9Qyg-jQRMjw8sVn6J1FBRwSOtj/view?usp=sharing")
 }
   // console.log(colorMode);
   

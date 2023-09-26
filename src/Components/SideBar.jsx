@@ -18,7 +18,7 @@ import {
   useDisclosure,
   useColorMode,
 } from "@chakra-ui/react";
-import Resume from "./Harshita_Katara_Resume.pdf"
+import Resume from "./Harshita-Katara-Resume.pdf";
 export default function DrawerExample({ handleClickScroll, handleResume }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
@@ -78,7 +78,7 @@ export default function DrawerExample({ handleClickScroll, handleResume }) {
                         marginLeft:"6px"
                         // border: "3px solid rgba(11,12,16,0.4)",
                       }}
-                      onClick={()=> window.open("https://drive.google.com/file/d/1CDMGHD_X1NggoBP3n1CS5fIbXdXVvnqZ/view?usp=share_link")}
+                      onClick={()=> window.open("https://drive.google.com/file/d/1laXdjw9Qyg-jQRMjw8sVn6J1FBRwSOtj/view?usp=sharing")}
                     >
                       <a 
                      

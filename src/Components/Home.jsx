@@ -22,7 +22,8 @@ import {
 import photo from "../Image/Harshita_katara_img.png"
 import { ReactElement } from "react";
 import { BiDownload } from "react-icons/bi";
-import Resume from "./Harshita_Katara_Resume.pdf"
+import Resume from "./Harshita-Katara-Resume.pdf";
+
 const Feature = ({ text, icon, iconBg }) => {
   return (
     <Stack direction={"row"} align={"center"}>
@@ -44,7 +45,7 @@ const Feature = ({ text, icon, iconBg }) => {
 export default function Home() {
   const { colorMode, toggleColorMode } = useColorMode();
   function handleResume(){
-    return window.open("https://drive.google.com/file/d/12XdkbZJHYBS807iBOAZryNBuMY2JBfVP/view?usp=sharing")
+    return window.open("https://drive.google.com/file/d/1laXdjw9Qyg-jQRMjw8sVn6J1FBRwSOtj/view?usp=sharing")
   }
   return (
     <>
@@ -139,7 +140,7 @@ export default function Home() {
                       <a 
                         id="resume-link-2"
                         href={Resume}
-                        download="Harshita-katara-Resume.pdf"
+                        download="Harshita-Katara-Resume.pdf"
                         style={{
                           textDecoration: "none",
                           color: "inherit",

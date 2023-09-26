@@ -33,7 +33,7 @@ const Projects = () => {
 let data = [
   {
     image:`${img1}`,
-    title: "Tackle&Trail",
+    title: "Tackle&Trail (Clone-Of-Basspro)",
     desc: "Discover Tackle&Trail, your ultimate source for premium fishing, hunting, boating, and outdoor sporting goods. We proudly offer a comprehensive selection of top-quality equipment and gear, ensuring that outdoor enthusiasts of all kinds find everything they need to embark on unforgettable adventures.",
     techStack: ["HTML", "CSS", "JavaScript","React","Redux","Chakra-UI"],
     github: "https://github.com/Harshitakatara34/auspicious-sea-8816",
@@ -42,7 +42,7 @@ let data = [
   {
     image:`${img2}`,
     desc: "Jewel Lane, a Caratlane-inspired e-commerce destination, is your go-to for exquisite gold and diamond jewellery. Our extensive collection includes a stunning  rings,  earrings, bangles, and timeless bracelets, all meticulously crafted to reflect your unique style and grace.",
-    title: "JewelLane",
+    title: "JewelLane (Clone-Of-Caratlane)",
     techStack: ["HTML", "CSS", "JavaScript","React","Redux","Chakra-UI","Node.js","Express.js","Mongoose"],
     github: "https://github.com/Harshitakatara34/pointless-belief-3937",
     deploy: "https://jewellane.vercel.app/",
@@ -50,14 +50,14 @@ let data = [
   {
     image:`${img3}`,
     desc: "Explore our Expedia-inspired e-commerce platform, where you can effortlessly book accommodations at a wide range of hotels and access enticing vacation packages. Plan your dream getaway with ease and embark on unforgettable journeys, all from the comfort of your screen.",
-    title: "Expedia Clone",
+    title: "Bagpacker (Clone-Of-Expedia)",
     techStack: ["HTML", "CSS", "JavaScript"],
     github: "https://github.com/Harshitakatara34/ragged-tank-492.git",
     deploy: "https://golden-sorbet-745819.netlify.app/",
   },
   {
     image:`${img4}`,
-    title: "Licious Clone",
+    title: "Chicken (Clone-Of-Licious)",
     desc: "Chicken, your premier online marketplace for sourcing top-quality poultry and fish products at the most competitive prices. Our diverse range of offerings ensures that you can place orders conveniently and enjoy doorstep delivery of the freshest and finest options for your culinary delights.",
     techStack: ["HTML", "CSS", "JavaScript"],
     github: "https://github.com/Harshitakatara34/defective-impulse-1904.git",
