@@ -41,6 +41,7 @@ const NavLink = ({ children }) => (
 export default function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
+  console.log("colorMode",colorMode)
   useEffect(() => {
     toggleColorMode("dark");
   }, []);
@@ -77,7 +78,7 @@ function handleResume(){
         >
           <Box w={{ base: "50%", sm: "20%" }} fontSize={"25px"} >
          
-          <Text as='em'>Harshita Katara</Text>
+          <Text as='em'>{"<Harshita Katara/>"}</Text>
           </Box>
           
           <Flex

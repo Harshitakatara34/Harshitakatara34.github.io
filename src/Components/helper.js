@@ -12,9 +12,15 @@ import {
 } from "@chakra-ui/react";
 import { BiLinkExternal } from "react-icons/bi";
 import { BsGithub } from "react-icons/bs";
-
+import {motion} from "framer-motion"
 function HelperProject({ image, title, techStack, desc, github, deploy }) {
   return (
+    <motion.div
+    initial={{ opacity: 0, y: 100 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: false, amount: 0.2 }}
+    transition={{ duration: 0.8, ease: "easeOut" }}
+  >
     <Box
       className="project-card"
       maxW="sm"
@@ -109,6 +115,7 @@ function HelperProject({ image, title, techStack, desc, github, deploy }) {
         </Flex>
       </Box>
     </Box>
+    </motion.div>
   );
 }
 

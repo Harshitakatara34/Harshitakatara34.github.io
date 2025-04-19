@@ -7,12 +7,31 @@ import Skills from './Components/Skills';
 import Stats from './Components/Stats';
 import Projects from './Components/Projects';
 import Contact from './Components/Contact';
-
+import AnimatedBackgroundWrapper from './Components/AnimatedBackground';
+import {Box} from "@chakra-ui/react"
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 function App() {
+ 
+
   return (
+    // <AnimatedBackgroundWrapper>
     <div style={{marginTop:'0px'}} >
-  
-    <Navbar id="nav-menu"/>
+    {/* // In your Navbar component */}
+{/* <AnimatedBackgroundWrapper> */}
+  {/* <Box
+    as="header"
+    px={4}
+    position="fixed"
+    w="100%"
+    zIndex={"1000"}
+    top={"0px"}
+  > */}
+      <Navbar id="nav-menu"/>
+  {/* </Box> */}
+{/* </AnimatedBackgroundWrapper> */}
+
 <Home id="home"/>
 <About id="about" class="about-section"/>
 <Skills id="skills"/>
@@ -21,6 +40,7 @@ function App() {
 <Contact id="contact"/>
    
     </div>
+    // </AnimatedBackgroundWrapper>
   );
 }
 

@@ -1,22 +1,29 @@
-import { Box, Flex, Heading, Image, Link, Stack } from "@chakra-ui/react";
+import { Box, Center, Flex, Heading, Image, Link, Stack } from "@chakra-ui/react";
 import React from "react";
 import GitHubCalendar from "react-github-calendar";
-
+import {motion} from "framer-motion"
 const Stats = () => {
   return (
     <Box marginTop={"130px"} textAlign="center">
       <Heading>GitHub Stats</Heading>
       <Stack>
-        <Box
+           <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0.4 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+        <Center 
           className="react-activity-calendar"
-          m={"auto"}
+          margin="auto"
+          // m={"auto"}
           mt="50px"
-          mb={"40px"}
+          mb={"20px"}
         >
           <Link href="https://github.com/Harshitakatara34" target="_blank">
             <GitHubCalendar username="harshitakatara34" />
           </Link>
-        </Box>
+        </Center>
         <Flex
           w={"100%"}
           m="auto"
@@ -72,7 +79,9 @@ const Stats = () => {
             </Flex>
           </Link>
         </Flex>
+        </motion.div>
       </Stack>
+    
     </Box>
   );
 };

@@ -18,6 +18,7 @@ import {
   Button,
 } from "@chakra-ui/react";
 import photo from "../Image/Harshita_katara_img.png"
+import { motion } from 'framer-motion';
 console.log(photo)
 const BlogTags = (props) => {
   return (
@@ -51,7 +52,11 @@ export const BlogAuthor = (props) => {
 
 const About = () => {
   return (
-    <>
+    <motion.div
+    initial={{ opacity: 0, y: 100 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8, ease: "easeOut" }}
+  >
       <Box h="60px"></Box>
       <Container
         maxW={{ base: "97%", lg: "90%" }}
@@ -180,7 +185,7 @@ const About = () => {
         </Flex>
         <Divider marginTop="20" />
       </Container>
-    </>
+    </motion.div>
   );
 };
 

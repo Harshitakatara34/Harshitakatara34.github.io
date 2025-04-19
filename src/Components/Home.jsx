@@ -14,16 +14,19 @@ import {
   Button,
   useColorMode,
 } from "@chakra-ui/react";
+
 import {
   IoAnalyticsSharp,
   IoLogoBitcoin,
   IoSearchSharp,
 } from "react-icons/io5";
 import photo from "../Image/Harshita_katara_img.png"
-import { ReactElement } from "react";
+import { ReactElement, useEffect } from "react";
 import { BiDownload } from "react-icons/bi";
 import Resume from "./Harshita-Katara-Resume.pdf";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { motion } from 'framer-motion';
 const Feature = ({ text, icon, iconBg }) => {
   return (
     <Stack direction={"row"} align={"center"}>
@@ -44,9 +47,18 @@ const Feature = ({ text, icon, iconBg }) => {
 
 export default function Home() {
   const { colorMode, toggleColorMode } = useColorMode();
-  function handleResume(){
+  function handleResume() {
     return window.open("https://drive.google.com/file/d/1laXdjw9Qyg-jQRMjw8sVn6J1FBRwSOtj/view?usp=sharing")
   }
+
+
+  // useEffect(() => {
+  //   AOS.init({
+  //     duration: 600, // Animation duration in milliseconds
+  //     easing: 'ease-in-sine', // Easing function
+  //     delay: 100, // Delay in milliseconds
+  //   });
+  // }, []);
   return (
     <>
       <Box h="30px"></Box>
@@ -102,7 +114,7 @@ export default function Home() {
                   />
                 }
               >
-              {/* <Link
+                {/* <Link
                id="resume-link-2"
                 href={Resume}
                 className="nav-link resume"
@@ -123,32 +135,32 @@ export default function Home() {
                 </Button>
               </Link> */}
 
-              <Button id="resume-button-2"  colorScheme="teal" variant="solid"
-                 className="nav-link resume"
-                      style={{
-                      
-                        fontWeight: "bold",
-                        fontSize: "15px",
-                        cursor: "pointer",
-                        padding: "8px 15px",
-                        borderRadius: "15px",
-                        // border: "3px solid rgba(11,12,16,0.4)",
-                      }}
-                      onClick={handleResume}
+                <Button id="resume-button-2" colorScheme="teal" variant="solid"
+                  className="nav-link resume"
+                  style={{
 
-                    >
-                      <a 
-                        id="resume-link-2"
-                        href={Resume}
-                        download="Harshita-Katara-Resume.pdf"
-                        style={{
-                          textDecoration: "none",
-                          color: "inherit",
-                        }}
-                      >
-                        Resume
-                      </a>
-                    </Button>
+                    fontWeight: "bold",
+                    fontSize: "15px",
+                    cursor: "pointer",
+                    padding: "8px 15px",
+                    borderRadius: "15px",
+                    // border: "3px solid rgba(11,12,16,0.4)",
+                  }}
+                  onClick={handleResume}
+
+                >
+                  <a
+                    id="resume-link-2"
+                    href={Resume}
+                    download="Harshita-Katara-Resume.pdf"
+                    style={{
+                      textDecoration: "none",
+                      color: "inherit",
+                    }}
+                  >
+                    Resume
+                  </a>
+                </Button>
 
                 <Flex justifyContent={"space-around"} w="25%">
                   <Link
@@ -185,7 +197,7 @@ export default function Home() {
                     </svg>
                   </Link>
 
-                
+
                 </Flex>
               </Stack>
               <Stack>
@@ -200,14 +212,14 @@ export default function Home() {
                   >
                     <path d="M8.26 1.289l-1.564.772c-5.793 3.02 2.798 20.944 9.31 20.944.46 0 .904-.094 1.317-.284l1.542-.755-2.898-5.594-1.54.754c-.181.087-.384.134-.597.134-2.561 0-6.841-8.204-4.241-9.596l1.546-.763-2.875-5.612zm7.746 22.711c-5.68 0-12.221-11.114-12.221-17.832 0-2.419.833-4.146 2.457-4.992l2.382-1.176 3.857 7.347-2.437 1.201c-1.439.772 2.409 8.424 3.956 7.68l2.399-1.179 3.816 7.36s-2.36 1.162-2.476 1.215c-.547.251-1.129.376-1.733.376" />
                   </svg>
-                  <a href="tel:7817032067"> 
-                  <Text id="contact-phone" ml={"5px"}>
-                    +91 7817032067
-                  </Text>
-        </a>
+                  <a href="tel:7817032067">
+                    <Text id="contact-phone" ml={"5px"}>
+                      +91 7817032067
+                    </Text>
+                  </a>
                 </Flex>
 
-                <Flex mt={{ base: "20px", sm: "0px" }}>
+                <Flex mt={{ base: "20px", sm: "0px" }} data-aos="fade-left">
                   <svg
                     fill="white"
                     width="24"
@@ -218,10 +230,10 @@ export default function Home() {
                   >
                     <path d="M24 21h-24v-18h24v18zm-23-16.477v15.477h22v-15.477l-10.999 10-11.001-10zm21.089-.523h-20.176l10.088 9.171 10.088-9.171z" />
                   </svg>
-              
+
                   <a href="mailto:khushikatara041@gmail.com">      <Text id="contact-email" ml={"10px"}>khushikatara041@gmail.com
-                
-                </Text></a>
+
+                  </Text></a>
                 </Flex>
               </Stack>
             </Stack>
@@ -231,15 +243,23 @@ export default function Home() {
             justifyContent={{ base: "center", lg: "end" }}
             alignItems={"center"}
             m="10px"
+
           >
-            <Image
-              w={{ base: "300px", lg: "400px" }}
-              mt="-10px"
-              rounded={"md"}
-              alt={"feature image"}
-              src="https://cdn.dribbble.com/users/17707/screenshots/2413754/rrr.gif"
-              objectFit={"cover"}
-            />
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false, margin: "0px 0px -100px 0px" }}
+              transition={{ duration: 0.6 }}
+            >
+              <Image
+                w={{ base: "300px", lg: "400px" }}
+                mt="-10px"
+                rounded={"md"}
+                alt={"feature image"}
+                src="https://cdn.dribbble.com/users/17707/screenshots/2413754/rrr.gif"
+                objectFit={"cover"}
+              />
+            </motion.div>
           </Flex>
         </Flex>
       </Container>
