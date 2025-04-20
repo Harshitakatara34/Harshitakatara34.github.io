@@ -37,7 +37,7 @@ function App() {
 <Skills id="skills"/>
 <Projects id="projects"/>
 <Stats/>
-<Contact id="contact"/>
+{/* <Contact id="contact"/> */}
    
     </div>
     // </AnimatedBackgroundWrapper>
