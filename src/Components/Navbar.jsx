@@ -2,23 +2,13 @@ import { React, ReactNode, useEffect, useRef } from "react";
 import {
   Box,
   Flex,
-  Avatar,
   Link,
   Button,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  Input,
-  MenuDivider,
   useDisclosure,
   useColorModeValue,
-  Stack,
   useColorMode,
-  Center,
   Text,
 } from "@chakra-ui/react";
-
 import { MoonIcon, SunIcon, HamburgerIcon } from "@chakra-ui/icons";
 import { BiDownload } from "react-icons/bi";
 import DrawerExample from "./SideBar";
@@ -56,7 +46,6 @@ export default function Navbar() {
 function handleResume(){
   return window.open("https://drive.google.com/file/d/1laXdjw9Qyg-jQRMjw8sVn6J1FBRwSOtj/view?usp=sharing")
 }
-  // console.log(colorMode);
   
   return (
     <>
@@ -76,7 +65,7 @@ function handleResume(){
           m="auto"
           width={"94%"}
         >
-          <Box w={{ base: "50%", sm: "20%" }} fontSize={"25px"} >
+          <Box w={{ base: "50%", sm: "20%" }} fontSize={{lg:"25px",base:"20px"}} >
          
           <Text as='em'>{"<Harshita Katara/>"}</Text>
           </Box>
@@ -124,7 +113,15 @@ function handleResume(){
               >
                 <Link className="nav-link skills">Skills</Link>
               </Button>
-
+              <Button
+                onClick={() => {
+                  handleClickScroll("skills");
+                }}
+                colorScheme="gray"
+                variant="ghost"
+              >
+                <Link className="nav-link skills">Experience</Link>
+              </Button>
               <Button
                 onClick={() => {
                   handleClickScroll("projects");

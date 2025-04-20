@@ -9,17 +9,17 @@ console.log(img1);
 
 const Projects = () => {
   return (
-    <Box id="projects" textAlign={"center"} pt="130px" mt={"10"}>
+    <Box id="projects" textAlign={"center"} mt={"100"} border="2px solid pink" >
       <Heading>Projects</Heading>
-      <SimpleGrid
+      <SimpleGrid border="2px solid yellow"
         justifyContent="center"
         textAlign={"center"}
         m={"auto"}
         columns={{ base: "1", md: "2", xl: "2" }}
         spacing={{ base: "10px", md: "40px" }}
         w={{ base: "95%", md: "81%" }}
-        marginTop="70px"
-        marginBottom={"50px"}
+        // marginTop="70px"
+        // marginBottom={"50px"}
         minH="200px" // Set a minimum height for each child
       >
         {data.map((el, ind) => {

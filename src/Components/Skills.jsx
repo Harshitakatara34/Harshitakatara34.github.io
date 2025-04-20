@@ -8,31 +8,40 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { motion } from 'framer-motion';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
 export default function Skills() {
+    useEffect(() => {
+      // Initialize AOS
+      AOS.init({
+        duration: 800,
+        once: false, // Whether animation should happen only once
+        easing: 'ease-in-out',
+      });
+  
+      // Refresh AOS after components are mounted
+      const timer = setTimeout(() => {
+        AOS.refresh();
+      }, 1000);
+  
+      return () => clearTimeout(timer);
+    }, []);
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 100 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: false, amount: 0.2 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-    >
-      <Center m="auto" pt={100} w="90%" id="skills" flexDirection="column">
-        <Heading>Tech Stack And Developer Tools</Heading>
+   
+      <Center m="auto" w="95%" id="skills" flexDirection="column" pt="3.6rem" >
+        <Heading  data-aos="fade-down">Tech Stack And Developer Tools</Heading>
         <Flex
           justifyContent={"space-around"}
           direction={{ base: "column", lg: "row" }}
           marginTop={"85px"}
           gap="3rem"
         >
-          <motion.div
-            initial={{ opacity: 0, y: 100 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.2 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
+        
             <Box
-              w={{ base: "100%", lg: "100%" }}
+             w="50%"
               borderRadius={"12px"}
+            data-aos="fade-right"
               p="12px"
               boxShadow={"rgba(255, 255, 255, 0.35) 10px 5px 15px;"}
             >
@@ -44,7 +53,7 @@ export default function Skills() {
                   sm: "repeat(4, 1fr)",
                   md: "repeat(4, 1fr)",
                   lg: "repeat(4, 1fr)",
-                  xl: "repeat(5, 1fr)",
+                  xl: "repeat(4, 1fr)",
                 }}
               >
                 <Flex
@@ -258,16 +267,12 @@ export default function Skills() {
                 </Flex>
               </Grid>
             </Box>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 100 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.2 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
+       
+        
             <Box
 
-              w={{ base: "100%", lg: "100%" }}
+           w="50%"
+            data-aos="fade-left"
               mt={{ base: "20px", lg: "0px" }}
               borderRadius={"12px"}
               p="12px"
@@ -281,7 +286,7 @@ export default function Skills() {
                   sm: "repeat(4, 1fr)",
                   md: "repeat(4, 1fr)",
                   lg: "repeat(4, 1fr)",
-                  xl: "repeat(5, 1fr)",
+                  xl: "repeat(4, 1fr)",
                 }}
               >
                 <Flex
@@ -477,9 +482,9 @@ export default function Skills() {
                 </Flex>
               </Grid>
             </Box>
-          </motion.div>
+      
         </Flex>
       </Center>
-    </motion.div>
+ 
   );
 }

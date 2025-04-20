@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Box,
   Heading,
@@ -17,6 +17,8 @@ import {
   Flex,
   Button,
 } from "@chakra-ui/react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import photo from "../Image/Harshita_katara_img.png"
 import { motion } from 'framer-motion';
 console.log(photo)
@@ -51,141 +53,100 @@ export const BlogAuthor = (props) => {
 };
 
 const About = () => {
+
+
+  useEffect(() => {
+    // Initialize AOS
+    AOS.init({
+      duration: 800,
+      once: false, // Whether animation should happen only once
+      easing: 'ease-in-out',
+    });
+
+    // Refresh AOS after components are mounted
+    const timer = setTimeout(() => {
+      AOS.refresh();
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
   return (
-    <motion.div
-    initial={{ opacity: 0, y: 100 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.8, ease: "easeOut" }}
-  >
-      <Box h="60px"></Box>
-      <Container
-        maxW={{ base: "97%", lg: "90%" }}
-        id="about"
-        className="about section"
-        p={{ base: "2", sm: "12" }}
-        textAlign="center"
+
+
+    <Container
+      maxW={{ base: "97%", lg: "90%" }}
+      id="about"
+      mt="2.5rem"
+      className="about section"
+      p={{ base: "2", sm: "12" }}
+      textAlign="center"
+    > 
+      <Heading mb={"10"} as="h1" data-aos="fade-down">
+        About
+      </Heading>
+      <Flex
+        w={"100%"}
+        data-aos="fade-up"
+        m="auto"
+        direction={{ base: "column", lg: "row" }}
+        bg={useColorModeValue("white", "gray.800")}
+        borderRadius="20px"
+        p="20px"
+        py="30px"
+        textAlign={"left"}
+        boxShadow={"rgba(230, 250, 255, 0.56) 0px 22px 70px 4px;"}
+        marginTop={{ base: "5", sm: "5" }}
+        justifyContent={{ base: "space-between", lg: "space-between" }}
       >
-        <Heading mb={"10"} as="h1">
-          About Me
-        </Heading>
-        <Flex
-          w={"100%"}
-          m="auto"
-          direction={{ base: "column", lg: "row" }}
-          bg={useColorModeValue("white", "gray.800")}
-          borderRadius="20px"
-          p="20px"
-          textAlign={"left"}
-          boxShadow={"rgba(230, 250, 255, 0.56) 0px 22px 70px 4px;"}
-          marginTop={{ base: "5", sm: "5" }}
-          justifyContent={{ base: "center", lg: "space-between" }}
-        >
-          <Box marginRight="3">
-            <Flex
-              // border={"5px solid red"}
-              width={{ base: "60%", md: "40%", lg: "85%" }}
-              justifyContent={"center"}
-              textAlign={"center"}
-              m="auto"
-              zIndex="2"
-              border="4px solid whiteAlpha"
-              borderRadius="20%"
-            >
-              <Image
-                textAlign={"center"}
-                class="home-img"
-                borderRadius="5%"
-                src={photo}
-                h="350px"
-                w="350px"
-                alt="some good alt text"
-                objectFit="cover"
-              />
-            </Flex>
-          </Box>
+        <Box data-aos="fade-right">
           <Flex
             // border={"5px solid red"}
-            w={{ base: "100%", lg: "70%" }}
-            mt={{ base: "40px", lg: "0px" }}
-            flexDirection="column"
-            justifyContent="center"
+            width={{ base: "60%", md: "40%", lg: "85%" }}
+            justifyContent={"center"}
+            textAlign={"center"}
+            m="auto"
+            zIndex="2"
+            border="4px solid whiteAlpha"
+
           >
-            {/* <BlogTags tags={['Engineering', 'Product']} /> */}
-            <Flex
-              direction={{ base: "column", md: "row" }}
-              justifyContent={"space-between"}
-              textAlign="center"
-              marginBottom={"20px"}
-            >
-              <Box
-                // w="30%"
-                w={{ base: "100%", md: "30%" }}
-                mt={{ base: "30px", md: "0px" }}
-                padding={"18px"}
-                borderRadius="9px"
-                boxShadow={
-                  "rgba(255, 255, 255, 0.17) 0px -2px 25px 0px inset, rgba(255, 255, 255, 0.15) 0px -36px 30px 0px inset, rgba(255, 255, 255, 0.1) 0px -79px 40px 0px inset, rgba(255, 255, 255, 0.06) 0px 2px 1px, rgba(255, 255, 255, 0.09) 0px 4px 2px, rgba(255, 255, 255, 0.09) 0px 8px 4px, rgba(255, 255, 255, 0.09) 0px 16px 8px, rgba(255, 255, 255, 0.09) 0px 2px 16px"
-                }
-              >
-                <Text>1200+ Hours</Text>
-                <Text>Full Stack Coding</Text>
-              </Box>
-
-              <Box
-                w={{ base: "100%", md: "30%" }}
-                mt={{ base: "30px", md: "0px" }}
-                padding={"18px"}
-                borderRadius="9px"
-                boxShadow={
-                  "rgba(255, 255, 255, 0.17) 0px -23px 25px 0px inset, rgba(255, 255, 255, 0.15) 0px -36px 30px 0px inset, rgba(255, 255, 255, 0.1) 0px -79px 40px 0px inset, rgba(255, 255, 255, 0.06) 0px 2px 1px, rgba(255, 255, 255, 0.09) 0px 4px 2px, rgba(255, 255, 255, 0.09) 0px 8px 4px, rgba(255, 255, 255, 0.09) 0px 16px 8px, rgba(255, 255, 255, 0.09) 0px 2px 16px"
-                }
-              >
-                <Text>4+ Major Projects</Text>
-                <Text>30+ Mini Projects</Text>
-              </Box>
-
-              <Box
-                w={{ base: "100%", md: "30%" }}
-                mt={{ base: "30px", md: "0px" }}
-                padding={"18px"}
-                borderRadius="9px"
-                boxShadow={
-                  "rgba(255, 255, 255, 0.17) 0px -23px 25px 0px inset, rgba(255, 255, 255, 0.15) 0px -36px 30px 0px inset, rgba(255, 255, 255, 0.1) 0px -79px 40px 0px inset, rgba(255, 255, 255, 0.06) 0px 2px 1px, rgba(255, 255, 255, 0.09) 0px 4px 2px, rgba(255, 255, 255, 0.09) 0px 8px 4px, rgba(255, 255, 255, 0.09) 0px 16px 8px, rgba(255, 255, 255, 0.09) 0px 2px 16px"
-                }
-              >
-                <Text>100+ Hours</Text>
-                <Text>Soft Skills</Text>
-              </Box>
-            </Flex>
-            <Heading marginTop="1">
-              <Link textDecoration="none" _hover={{ textDecoration: "none" }}>
-                Summary
-              </Link>
-              {/* <Button
-                id="resume-button-2"
-                colorScheme="teal"
-                size="md"
-              ></Button> */}
-            </Heading>
-            <Text
-              as="p"
-              marginTop="2"
-              color={useColorModeValue("gray.700", "gray.200")}
-              fontSize="lg"
-              id="user-detail-intro"
-            >
-              I am a Full Stack Developer in MERN stack having good knowledge o
-              Express, MongoDB, JavaScript, HTML, CSS, etc. I am passionate
-              about learning new technologies and aiming to create world-class
-              web applications while facilitating organizations in achieving
-              ambitious goals.
-            </Text>
-            {/* <BlogAuthor name="John Doe" date={new Date('2021-04-06T19:01:27Z')} /> */}
+            <Image
+              textAlign={"center"}
+              class="home-img"
+              // borderRadius="100%"
+              src={photo}
+              h="280px"
+              w="320px"
+              alt="some good alt text"
+            // objectFit="cover"
+            />
           </Flex>
+        </Box>
+        <Flex
+          w={{ base: "60%", lg: "67%" }}
+          mt={{ base: "40px", lg: "0px" }}
+          flexDirection="column"
+          justifyContent="center"
+          data-aos="fade-left"
+        >
+
+
+          <VStack>
+
+
+            <Text fontSize="lg" lineHeight="tall" color={useColorModeValue("gray.700", "gray.300")}>
+              Hello! My name is Harshita Katara, and I am a skilled full stack web developer with a expertise in Mern Stack. My efficiency spans both front-end and back-end development, allowing me to build seamless user-friendly web applications from the ground up and to tackle complex development challenges. I am passionate about creating innovative solutions that enhance user experiences and drive business success. With a commitment to continuous learning and a strong foundation in software development, I am excited to contribute to dynamic projects and collaborate with forward-thinking teams.
+            </Text>
+
+
+          </VStack>
+          {/* <BlogAuthor name="John Doe" date={new Date('2021-04-06T19:01:27Z')} /> */}
         </Flex>
-        <Divider marginTop="20" />
-      </Container>
-    </motion.div>
+      </Flex>
+      <Divider marginTop="20" />
+    </Container>
+
+
+
   );
 };
 

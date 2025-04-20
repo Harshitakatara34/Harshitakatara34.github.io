@@ -1,22 +1,34 @@
 import { Box, Center, Flex, Heading, Image, Link, Stack } from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect } from "react";
 import GitHubCalendar from "react-github-calendar";
-import {motion} from "framer-motion"
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const Stats = () => {
+   useEffect(() => {
+      // Initialize AOS
+      AOS.init({
+        duration: 800,
+        once: false, // Whether animation should happen only once
+        easing: 'ease-in-out',
+      });
+      
+      // Refresh AOS after components are mounted
+      const timer = setTimeout(() => {
+        AOS.refresh();
+      }, 1000);
+      
+      return () => clearTimeout(timer);
+    }, []);
   return (
     <Box marginTop={"130px"} textAlign="center">
-      <Heading>GitHub Stats</Heading>
+      <Heading data-aos="fade-down">GitHub Stats</Heading>
       <Stack>
-           <motion.div
-            initial={{ opacity: 0, y: 100 }}
-            whileInView={{ opacity: 1, y: 0.4 }}
-            viewport={{ once: false, amount: 0.2 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
+          
         <Center 
           className="react-activity-calendar"
           margin="auto"
           // m={"auto"}
+           data-aos="fade-up"
           mt="50px"
           mb={"20px"}
         >
@@ -30,6 +42,7 @@ const Stats = () => {
           justifyContent={{ base: "center", md: "space-around" }}
           marginTop="30px"
           direction={{ base: "column", md: "row" }}
+           data-aos="fade-up"
           // border={"3px solid white"}
         >
           <Link
@@ -39,7 +52,7 @@ const Stats = () => {
             href="https://github.com/Harshitakatara34"
             target="_blank"
           >
-            <Flex justifyContent={"center"}>
+            <Flex justifyContent={"center"}  data-aos="fade-right">
               <Image
                 id="github-streak-stats"
                 src={
@@ -56,7 +69,7 @@ const Stats = () => {
             href="https://github.com/Harshitakatara34"
             target="_blank"
           >
-            <Flex justifyContent={"center"}>
+            <Flex justifyContent={"center"}  data-aos="fade-up">
               <Image
                 id="github-top-langs"
                 src="https://github-readme-stats.vercel.app/api/top-langs?username=harshitakatara34&show_icons=true&locale=en&layout=compact"
@@ -71,7 +84,7 @@ const Stats = () => {
             href="https://github.com/Harshitakatara34"
             target="_blank"
           >
-            <Flex justifyContent={"center"}>
+            <Flex justifyContent={"center"} data-aos="fade-left">
               <Image
                 id="github-stats-card"
                 src="https://github-readme-stats.vercel.app/api?username=harshitakatara34&show_icons=true&locale=en"
@@ -79,7 +92,7 @@ const Stats = () => {
             </Flex>
           </Link>
         </Flex>
-        </motion.div>
+   
       </Stack>
     
     </Box>

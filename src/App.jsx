@@ -12,6 +12,7 @@ import {Box} from "@chakra-ui/react"
 import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import ExperienceTimeline from './Components/Experience';
 function App() {
  
 
@@ -35,9 +36,10 @@ function App() {
 <Home id="home"/>
 <About id="about" class="about-section"/>
 <Skills id="skills"/>
+<ExperienceTimeline/>
 <Projects id="projects"/>
 <Stats/>
-{/* <Contact id="contact"/> */}
+<Contact id="contact"/>
    
     </div>
     // </AnimatedBackgroundWrapper>
