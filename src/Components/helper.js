@@ -1,121 +1,99 @@
-import { StarIcon } from "@chakra-ui/icons";
 import {
   Badge,
   Box,
   Button,
+  Code,
   Flex,
   Image,
   Link,
   Text,
-  Heading,
-  Code,
 } from "@chakra-ui/react";
 import { BiLinkExternal } from "react-icons/bi";
 import { BsGithub } from "react-icons/bs";
-import {motion} from "framer-motion"
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
 function HelperProject({ image, title, techStack, desc, github, deploy }) {
+    useEffect(() => {
+      // Initialize AOS
+      AOS.init({
+        duration: 800,
+        once: false, // Whether animation should happen only once
+        easing: 'ease-in-out',
+      });
+  
+      // Refresh AOS after components are mounted
+      const timer = setTimeout(() => {
+        AOS.refresh();
+      }, 1000);
+  
+      return () => clearTimeout(timer);
+    }, []);
   return (
-    <motion.div
-    initial={{ opacity: 0, y: 100 }}
-    whileInView={{ opacity: 1, y:0 }}
-    viewport={{ once: false, amount: 0.2 }}
-    transition={{ duration: 0.8, ease: "easeOut" }}
-  >
-    <Box border="2px solid red"
+    <Box
       className="project-card"
-      maxW="sm"
-      m="auto"
-      w="100%"
+      maxW="100%"
+      minH="500px"
+      h="100%"
       borderWidth="1px"
       borderRadius="lg"
       overflow="hidden"
-      // mt="10px"
+     mt="5rem"
+      display="flex"
+      flexDirection="column"
+      justifyContent="space-between"
+      // bg="white"
+      boxShadow="md"
+      data-aos="fade-up"
     >
-      <Box borderRadius="lg" overflow="hidden">
-        <Link textDecoration="none" _hover={{ textDecoration: "none" }}>
-          <Image
-            transform="scale(1.0)"
-            src={image}
-            alt="some text"
-            objectFit="contain"
-            width="100%"
-            transition="0.3s ease-in-out"
-            _hover={{
-              transform: "scale(1.05)",
-            }}
-          />
-        </Link>
-      </Box>
+      <Image
+        src={image}
+        alt={title}
+        objectFit="cover"
+        w="100%"
+        h="200px"
+        borderRadius="md"
+      />
 
-      <Box p="7">
-        <Box display="flex" flexWrap={"wrap"} alignItems="baseline">
-          {techStack?.map((el, ind) => {
-            return (
-              <Code
-                mr="10px"
-                fontSize={"14px"}
-                borderRadius="50px"
-                px="10px"
-                mb="4px"
-                colorScheme={"teal"}
-              >
-                <Badge
-                  class="project-tech-stack"
-                  key={ind + Date.now()}
-                  borderRadius="full"
-                  colorScheme="teal"
-                >
-                  {el}{" "}
-                </Badge>
-              </Code>
-            );
-          })}
-        </Box>
-        <Text
-          mt="4"
-          fontWeight="bold"
-          as="h4"
-          lineHeight="tight"
-          noOfLines={2}
-          textAlign="left"
-          className="project-title"
-        >
+      <Box mt={4} p={4}>
+        <Text fontWeight="bold" fontSize="xl" mb={2} textAlign="left">
           {title}
         </Text>
+        <Text fontSize="sm" textAlign="left" noOfLines={4}>
+          {desc}
+        </Text>
 
-        <Text
-  mt="4"
-  fontWeight="semibold"
-  as="h4"
-  lineHeight="tight"
-  noOfLines={10}
-  textAlign="left"
-  className="project-description"
-  style={{ overflow: 'hidden', whiteSpace: 'pre-line' }}
->
-  {desc}
-</Text>
-
-
-        <Flex mt={"4"} justifyContent={"space-between"}>
-          <Link class="project-github-link" href={github} isExternal>
-            <Button size="sm" colorScheme="teal" variant="solid">
-              <Text mr={"4px"}>GitHub</Text>
-
-              <BsGithub />
-            </Button>
-          </Link>
-
-          <Link class="project-deployed-link" href={deploy} isExternal>
-            <Button size="sm" colorScheme="teal" variant="outline">
-              <Text mr={"4px"}>Deployed Link</Text>
-              <BiLinkExternal />
-            </Button>
-          </Link>
+        <Flex wrap="wrap" mt={4}>
+          {techStack.map((tech, i) => (
+            <Badge
+              key={i}
+              mr={2}
+              mb={2}
+              px={2}
+              py={1}
+              borderRadius="md"
+              colorScheme="teal"
+              fontSize="xs"
+            >
+              {tech}
+            </Badge>
+          ))}
         </Flex>
       </Box>
+
+      <Flex justifyContent="space-between" p={4}>
+        <Link href={github} isExternal>
+          <Button size="sm" colorScheme="teal" leftIcon={<BsGithub />}>
+            GitHub
+          </Button>
+        </Link>
+        <Link href={deploy} isExternal>
+          <Button size="sm" colorScheme="teal" variant="outline" leftIcon={<BiLinkExternal />}>
+            Live
+          </Button>
+        </Link>
+      </Flex>
     </Box>
-    </motion.div>
   );
 }
 

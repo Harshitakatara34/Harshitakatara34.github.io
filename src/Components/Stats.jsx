@@ -20,14 +20,15 @@ const Stats = () => {
       return () => clearTimeout(timer);
     }, []);
   return (
-    <Box marginTop={"130px"} textAlign="center">
+    <Box mt="15rem" textAlign="center">
       <Heading data-aos="fade-down">GitHub Stats</Heading>
-      <Stack>
+      <Stack    w="85%" margin="auto">
           
         <Center 
           className="react-activity-calendar"
           margin="auto"
           // m={"auto"}
+       
            data-aos="fade-up"
           mt="50px"
           mb={"20px"}

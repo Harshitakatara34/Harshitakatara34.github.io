@@ -9,9 +9,9 @@ console.log(img1);
 
 const Projects = () => {
   return (
-    <Box id="projects" textAlign={"center"} mt={"100"} border="2px solid pink" >
+    <Box id="projects" textAlign={"center"} mt="6rem"  >
       <Heading>Projects</Heading>
-      <SimpleGrid border="2px solid yellow"
+      <SimpleGrid 
         justifyContent="center"
         textAlign={"center"}
         m={"auto"}
