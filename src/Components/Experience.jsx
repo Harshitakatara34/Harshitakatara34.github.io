@@ -49,13 +49,18 @@ const ExperienceTimeline = () => {
             py={{ base: 5, md: 10 }}
             data-aos="zoom-out-up"
             mt={{ base: "4rem", md: "8rem" }}
-            // border="4px solid red"
+            // border=
+            // "4px solid red"
         >
+             <Heading mb={"10"} as="h1" data-aos="fade-down" color="white" textAlign="center"  display={{ base: "block", lg: "none" }}>
+                               Professional Experience
+                              </Heading>
             <Flex 
                 direction={{ base: "column", lg: "row" }}
                 align="flex-start"
                 gap={{ base: 4, lg: 8 }}
             >
+            
                 {/* Vertical Title (LEFT SIDE) */}
                 <Box 
                     position="relative"
@@ -86,11 +91,12 @@ const ExperienceTimeline = () => {
                                 lineHeight="1.2"
                                 whiteSpace="nowrap"
                                 textAlign="center"
-                                // display={{base:"none"}}
+                                display={{ base: "none", lg: "block" }}
                             >
                                 Professional <br /> Experiences
                             </Heading>
                         </Box>
+                         
                     </motion.div>
                 </Box>
 
