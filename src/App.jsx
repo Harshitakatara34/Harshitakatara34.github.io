@@ -35,11 +35,11 @@ function App() {
 
 <Home id="home"/>
 <About id="about" class="about-section"/>
-{/* <Skills id="skills"/> */}
-{/* <ExperienceTimeline/> */}
-{/* <Projects id="projects"/> */}
-{/* <Stats/> */}
-{/* <Contact id="contact"/> */}
+<Skills id="skills"/>
+<ExperienceTimeline id="experience"/>
+<Projects id="projects"/>
+<Stats/>
+<Contact id="contact"/>
    
     </div>
     // </AnimatedBackgroundWrapper>

@@ -1,4 +1,4 @@
-import { React, ReactNode, useEffect, useRef } from "react";
+import { React, useEffect, useState } from "react";
 import {
   Box,
   Flex,
@@ -9,208 +9,137 @@ import {
   useColorMode,
   Text,
 } from "@chakra-ui/react";
-import { MoonIcon, SunIcon, HamburgerIcon } from "@chakra-ui/icons";
+import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import { BiDownload } from "react-icons/bi";
 import DrawerExample from "./SideBar";
 import Resume from "./Harshita-Katara-Resume.pdf";
-const NavLink = ({ children }) => (
-  <Link
-    px={2}
-    py={1}
-    rounded={"md"}
-    _hover={{
-      textDecoration: "none",
-      bg: useColorModeValue("gray.200", "gray.700"),
-    }}
-    href={"#"}
-  >
-    {children}
-  </Link>
-);
+
+const navItems = [
+  { label: "Home", id: "home" },
+  { label: "About", id: "about" },
+  { label: "Skills", id: "skills" },
+  { label: "Experience", id: "experience" }, // Experience shares same section as Skills
+  { label: "Projects", id: "projects" },
+  { label: "Contact", id: "contact" },
+];
 
 export default function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
-  console.log("colorMode",colorMode)
+const [activeTab,setActiveTab]=useState("")
   useEffect(() => {
     toggleColorMode("dark");
   }, []);
 
   const handleClickScroll = (value) => {
+    setActiveTab(value);
     const element = document.getElementById(value);
     if (element) {
-      // 👇 Will scroll smoothly to the top of the next section
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
-function handleResume(){
-  return window.open("https://drive.google.com/file/d/1laXdjw9Qyg-jQRMjw8sVn6J1FBRwSOtj/view?usp=sharing")
-}
-  
+
+  function handleResume() {
+    return window.open("https://drive.google.com/file/d/1laXdjw9Qyg-jQRMjw8sVn6J1FBRwSOtj/view?usp=sharing");
+  }
+
   return (
-    <>
-      <Box
-        as="header"
-        bg={useColorModeValue("gray.100", "gray.900")}
-        px={4}
-        position="fixed"
-        w="100%"
-        zIndex={"1000"}
-        top={"0px"}
+    <Box
+      as="header"
+      bg={useColorModeValue("gray.100", "gray.900")}
+      px={4}
+      position="fixed"
+      w="100%"
+      zIndex={"1000"}
+      top={"0px"}
+    >
+      <Flex
+        h={16}
+        alignItems={"center"}
+        justifyContent={"space-between"}
+        m="auto"
+        width={"94%"}
       >
-        <Flex
-          h={16}
-          alignItems={"center"}
-          justifyContent={"space-between"}
-          m="auto"
-          width={"94%"}
-        >
-          <Box w={{ base: "50%", sm: "20%" }} fontSize={{lg:"25px",base:"20px"}} >
-         
+        <Box w={{ base: "50%", sm: "100%" }} fontSize={{ lg: "20px", base: "16px" }} >
           <Text as='em'>{"<Harshita Katara/>"}</Text>
-          </Box>
-          
+        </Box>
+
+        {/* Desktop Menu */}
+        <Flex
+          w="70%"
+          display={{ base: "none", lg: "block" }}
+          alignItems={"center"}
+          justifyContent="end"
+        >
           <Flex
-            w="70%"
-            display={{ base: "none", lg: "block" }}
+            id="nav-menu"
+            w="100%"
+            gap="0.6rem"
+            // border="2px solid red"
+            justifyContent={"space-between"}
+            direction={"row"}
+            fontSize="16px"
             alignItems={"center"}
-            justifyContent="end"
           >
-            <Flex
-              id="nav-menu"
-              w="100%"
-              justifyContent={"space-between"}
-              direction={"row"}
-              fontSize="18px"
-              alignItems={"center"}
+            {navItems.map((item, index) => (
+              <Button
+                key={index}
+                onClick={() => handleClickScroll(item.id)}
+                colorScheme="gray"
+                variant="ghost"
+                fontSize="12px"
+                size="sm"
+              >
+                <Link className={`nav-link ${item.id.toLowerCase()}`}>{item.label}</Link>
+              </Button>
+            ))}
+
+            <Button
+              id="resume-button-1"
+              className="animatedButton"
+         
+        size="sm"
+              variant="solid"
+             
+              onClick={handleResume}
             >
-              <Button
-                onClick={() => {
-                  handleClickScroll("home");
-                }}
-                colorScheme="gray"
-                variant="ghost"
-              >
-                <Link className="nav-link home">Home</Link>
-              </Button>
-
-              <Button
-                colorScheme="gray"
-                onClick={() => {
-                  handleClickScroll("about");
-                }}
-                variant="ghost"
-              >
-                <Link className="nav-link about">About</Link>
-              </Button>
-
-              <Button
-                onClick={() => {
-                  handleClickScroll("skills");
-                }}
-                colorScheme="gray"
-                variant="ghost"
-              >
-                <Link className="nav-link skills">Skills</Link>
-              </Button>
-              <Button
-                onClick={() => {
-                  handleClickScroll("skills");
-                }}
-                colorScheme="gray"
-                variant="ghost"
-              >
-                <Link className="nav-link skills">Experience</Link>
-              </Button>
-              <Button
-                onClick={() => {
-                  handleClickScroll("projects");
-                }}
-                colorScheme="gray"
-                variant="ghost"
-              >
-                <Link className="nav-link projects">Projects</Link>
-              </Button>
-
-              <Button
-                onClick={() => {
-                  handleClickScroll("contact");
-                }}
-                colorScheme="gray"
-                variant="ghost"
-              >
-                <Link className="nav-link contact">Contact</Link>
-              </Button>
-
-              {/* <Link
-               id="resume-link-1"
+              <span>
+              <a
+                id="resume-link-1"
                 href={Resume}
-                className="nav-link resume"
-                download
-                onClick={handleResume}
-                target="_blank"
+                download="Harshita-katara-Resume.pdf"
+                style={{ textDecoration: "none" }}
               >
-                <Button
-                  className="nav-link resume"
-                  id="resume-button-1"
-                  colorScheme="teal"
-                  size="md"
-                >
-                  <Text mr={"4px"}>
-                    Resume
-                    <BiDownload />
-                  </Text>
-                </Button>
-              </Link> */}
-              <Button id="resume-button-1"
-                 className="nav-link resume"
-                 colorScheme="teal" variant="solid"
-                      style={{
-                      
-                        fontWeight: "bold",
-                        fontSize: "15px",
-                        cursor: "pointer",
-                        padding: "8px 15px",
-                        borderRadius: "15px",
-                        // border: "3px solid rgba(11,12,16,0.4)",
-                      }}
-                      onClick={handleResume}
-
-                    >
-                      <a 
-                        id="resume-link-1"
-                        href={Resume}
-                        download="Harshita-katara-Resume.pdf"
-                        style={{
-                          textDecoration: "none",
-                          color: "inherit",
-                        }}
-                      >
-                        Resume
-                      </a>
-                    </Button>
-              <Button onClick={toggleColorMode}>
-                {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
-              </Button>
-            </Flex>
+                Resume
+              </a>
+              </span>
+             
+            </Button>
+            <Button onClick={toggleColorMode} size="sm" >
+              <span>
+              {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+              </span>
+             
+            </Button>
           </Flex>
-
-          <Box display={{ base: "block", lg: "none" }}>
-            <Flex
-              w="100%"
-              justifyContent={"space-between"}
-              direction={"column"}
-              fontSize="18px"
-              alignItems={"center"}
-            >
-              <DrawerExample
-                handleClickScroll={handleClickScroll}
-                handleResume={handleResume}
-              />
-            </Flex>
-          </Box>
         </Flex>
-      </Box>
-    </>
+
+        <Box display={{ base: "block", lg: "none" }}>
+          <Flex
+            w="100%"
+            justifyContent={"space-between"}
+            direction={"column"}
+            fontSize="18px"
+            alignItems={"center"}
+          >
+            <DrawerExample
+              handleClickScroll={handleClickScroll}
+              activeTab={activeTab}
+              handleResume={handleResume}
+            />
+          </Flex>
+        </Box>
+      </Flex>
+    </Box>
   );
 }

@@ -11,13 +11,16 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: "hidden";
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
+html{
+  overflow-x: hidden;
+}
 #projects::before {
   content: "";
   display: block;
@@ -26,7 +29,7 @@ code {
   visibility: hidden;
 }
 
-/* #home {
+/* #home {navar
 	width: 100vw;
 	min-height: 100vh;
 	background-image:  url(http://oaktreedesign.powweb.com/myfiles/desk-designer1.jpg);
@@ -35,3 +38,57 @@ code {
 	margin-top: -18px;
   background-size: cover; 
 } */
+/* From Uiverse.io by BHARGAVPATEL1244 */ 
+.animatedButton {
+  outline: none;
+  cursor: pointer;
+  border: none;
+  padding: 0.2rem 1rem !important;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  position: relative;
+  display: inline-block;
+  letter-spacing: 0.05rem;
+  font-weight: 700;
+  font-size: 12px !important;
+  /* border-radius: 500px; */
+  overflow: hidden;
+  background: linear-gradient(to left, #81e6d9, #28628b) !important;
+  color: white !important;
+ }
+ 
+ .animatedButton span {
+  position: relative;
+  z-index: 10;
+  transition: color 0.4s;
+ }
+ 
+ .animatedButton:hover span {
+  color: white !important;
+ }
+ 
+ .animatedButton::before,
+ .animatedButton::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to left, #81e6d9, #28628b);
+  height: 100%;
+  z-index: 0;
+ }
+ 
+ .animatedButton::before {
+  content: "";
+  background: linear-gradient(to left, #81e6d9, #28628b);
+  width: 120%;
+  left: -10%;
+  transform: skew(30deg);
+  transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+ }
+ 
+ .animatedButton:hover::before {
+  transform: translate3d(100%, 0, 0);
+ }
+ 

@@ -17,7 +17,7 @@ const Projects = () => {
         m={"auto"}
         columns={{ base: "1", md: "2", xl: "2" }}
         spacing={{ base: "10px", md: "40px" }}
-        w={{ base: "95%", md: "81%" }}
+        w={{ base: "85%", md: "81%" }}
         // marginTop="70px"
         // marginBottom={"50px"}
         minH="200px" // Set a minimum height for each child

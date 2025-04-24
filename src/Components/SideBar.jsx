@@ -1,34 +1,45 @@
-import { React, ReactNode, useEffect, useRef } from "react";
+import { React, useRef } from "react";
 import { MoonIcon, SunIcon, HamburgerIcon } from "@chakra-ui/icons";
 import { BiDownload } from "react-icons/bi";
 
 import {
   Drawer,
   DrawerBody,
-  DrawerFooter,
   DrawerHeader,
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
   Button,
-  Input,
   Flex,
-  Link,
   Text,
   useDisclosure,
   useColorMode,
 } from "@chakra-ui/react";
+
 import Resume from "./Harshita-Katara-Resume.pdf";
-export default function DrawerExample({ handleClickScroll, handleResume }) {
+
+const navTabs = [
+  { label: "Home", id: "home", className: "nav-link home" },
+  { label: "About", id: "about", className: "nav-link about" },
+  { label: "Skills", id: "skills", className: "nav-link skills" },
+  { label: "Projects", id: "projects", className: "nav-link projects" },
+  { label: "Contact", id: "contact", className: "nav-link contact" },
+];
+
+export default function DrawerExample({ handleClickScroll, handleResume,activeTab }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
   const btnRef = useRef();
 
   return (
     <>
-      <Button ref={btnRef} colorScheme="teal" onClick={onOpen}>
+      <Button ref={btnRef} colorScheme="teal" onClick={onOpen} className="animatedButton">
+        <span>
         <HamburgerIcon />
+        </span>
+      
       </Button>
+
       <Drawer
         isOpen={isOpen}
         placement="right"
@@ -39,180 +50,67 @@ export default function DrawerExample({ handleClickScroll, handleResume }) {
         <DrawerContent>
           <DrawerCloseButton />
           <DrawerHeader>
-            <Flex w="70%" justifyContent={"flex-start"}>
-              <Button onClick={toggleColorMode}>
+            <Flex w="70%" justifyContent={"flex-start"} gap="0.5rem">
+              <Button onClick={toggleColorMode} size="sm">
                 {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
               </Button>
-{/* 
-              <Link
-                id="resume-link-1"
-                href="Harshita_Katara_Resume.pdf"
-                download
-                onClick={handleResume}
-                target="_blank"
+
+              <Button
+              size="sm"
+                className="animatedButton"
+                variant="solid"
+                onClick={() =>
+                  window.open(
+                    "https://drive.google.com/file/d/1laXdjw9Qyg-jQRMjw8sVn6J1FBRwSOtj/view?usp=sharing"
+                  )
+                }
               >
-                <Button
-                  id="resume-button-1"
-                  class="nav-link resume"
-                  colorScheme="blue"
-                  size="md"
-                  ml="20px"
-                  variant="solid"
-                >
-                  <Flex ml="10px" alignItems={"center"}>
-                    <Button>
-                      <Text mr={"4px"}>Resume</Text> <BiDownload />
-                    </Button>
-                  </Flex>
-                </Button>
-              </Link> */}
-              
-              <Button colorScheme="teal" variant="solid"
-                      style={{
-                       
-                        fontWeight: "bold",
-                        fontSize: "15px",
-                        cursor: "pointer",
-                        padding: "8px 15px",
-                        borderRadius: "15px",
-                        marginLeft:"6px"
-                        // border: "3px solid rgba(11,12,16,0.4)",
-                      }}
-                      onClick={()=> window.open("https://drive.google.com/file/d/1laXdjw9Qyg-jQRMjw8sVn6J1FBRwSOtj/view?usp=sharing")}
-                    >
-                      <a 
-                     
-                        href={Resume}
-                        download="Harshita-katara-Resume.pdf"
-                        style={{
-                          textDecoration: "none",
-                          color: "inherit",
-                        }}
-                      >
-                        Resume
-                      </a>
-                    </Button>
+                <span>
+                  <a
+                    href={Resume}
+                    download="Harshita-katara-Resume.pdf"
+                    style={{ textDecoration: "none", color: "inherit" }}
+                  >
+                    Resume
+                  </a>
+                </span>
+              </Button>
             </Flex>
           </DrawerHeader>
 
           <DrawerBody>
             <Flex
               w="100%"
-              justifyContent={"space-between"}
-              direction={"column"}
+              justifyContent="space-between"
+              direction="column"
               fontSize="18px"
-              alignItems={"center"}
+              alignItems="center"
             >
-              <Flex
-                w="100%"
-                onClick={() => {
-                  handleClickScroll("home");
-                }}
-                class="nav-link home"
-                colorScheme="gray"
-                variant="ghost"
-                align="center"
-                p="3"
-                mx="4"
-                borderRadius="lg"
-                role="group"
-                cursor="pointer"
-                _hover={{
-                  bg: "cyan.400",
-                  color: "white",
-                }}
-              >
-                Home
-              </Flex>
-
-              <Flex
-                w="100%"
-                class="nav-link about"
-                colorScheme="gray"
-                onClick={() => {
-                  handleClickScroll("about");
-                }}
-                variant="ghost"
-                align="center"
-                p="3"
-                mx="4"
-                borderRadius="lg"
-                role="group"
-                cursor="pointer"
-                _hover={{
-                  bg: "cyan.400",
-                  color: "white",
-                }}
-              >
-                About
-              </Flex>
-
-              <Flex
-                w="100%"
-                class="nav-link skills"
-                onClick={() => {
-                  handleClickScroll("skills");
-                }}
-                colorScheme="gray"
-                variant="ghost"
-                align="center"
-                p="3"
-                mx="4"
-                borderRadius="lg"
-                role="group"
-                cursor="pointer"
-                _hover={{
-                  bg: "cyan.400",
-                  color: "white",
-                }}
-              >
-                Skills
-              </Flex>
-
-              <Flex
-                w="100%"
-                textAlign={"left"}
-                class="nav-link projects"
-                onClick={() => {
-                  handleClickScroll("projects");
-                }}
-                colorScheme="gray"
-                variant="ghost"
-                align="center"
-                p="3"
-                mx="4"
-                borderRadius="lg"
-                role="group"
-                cursor="pointer"
-                _hover={{
-                  bg: "cyan.400",
-                  color: "white",
-                }}
-              >
-                Projects
-              </Flex>
-
-              <Flex
-                w="100%"
-                onClick={() => {
-                  handleClickScroll("contact");
-                }}
-                class="nav-link contact"
-                colorScheme="gray"
-                variant="ghost"
-                align="center"
-                p="3"
-                mx="4"
-                borderRadius="lg"
-                role="group"
-                cursor="pointer"
-                _hover={{
-                  bg: "cyan.400",
-                  color: "white",
-                }}
-              >
-                Contact
-              </Flex>
+              {navTabs.map((tab) => (
+                <Flex
+                  key={tab.id}
+                  w="100%"
+                  onClick={() => handleClickScroll(tab.id)}
+                  className={tab.className}
+                  colorScheme="gray"
+                  variant="ghost"
+                  align="center"
+                  p="3"
+                  mx="4"
+                  bgGradient={
+                    activeTab === tab.id
+                      ? "linear(to-l, #81e6d9, #28628b)"
+                      : "none"
+                  }
+                  fontSize="16px"
+                  borderRadius="lg"
+                  role="group"
+                  cursor="pointer"
+                  _hover={{ background:"(to-l, #81e6d9, #28628b)", color: "white" }}
+                >
+                  {tab.label}
+                </Flex>
+              ))}
             </Flex>
           </DrawerBody>
         </DrawerContent>
