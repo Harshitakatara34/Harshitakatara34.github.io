@@ -6,6 +6,7 @@ import {
   Heading,
   Image,
   Text,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { motion } from 'framer-motion';
 import AOS from 'aos';
@@ -89,7 +90,7 @@ export default function Skills() {
       flexDirection="column" 
       pt="3.6rem"
     >
-      <Heading data-aos="fade-down" textAlign="center">Tech Stack And Developer Tools</Heading>
+      <Heading data-aos="fade-down" textAlign="center" color={useColorModeValue("gray.600","white")}>Tech Stack And Developer Tools</Heading>
       
       <Flex
         direction={{ base: "column", lg: "row" }}
@@ -104,7 +105,7 @@ export default function Skills() {
           borderRadius="12px"
           p="12px"
           // border="2px solid red"
-          boxShadow="rgba(255, 255, 255, 0.35) 10px 5px 15px"
+          boxShadow={"rgba(230, 250, 255, 0.56) 0px 22px 70px 4px;"}
           data-aos="fade-right"
         >
           <Text fontSize="23px" mb={4}>Tech Stack</Text>
@@ -132,7 +133,7 @@ export default function Skills() {
           w={{ base: "100%", lg: "48%" }}
           borderRadius="12px"
           p="12px"
-          boxShadow="rgba(255, 255, 255, 0.35) 10px 5px 15px"
+          boxShadow={"rgba(230, 250, 255, 0.56) 0px 22px 70px 4px;"}
           data-aos="fade-left"
         >
           <Text fontSize="23px" mb={4}>Developer Tools</Text>

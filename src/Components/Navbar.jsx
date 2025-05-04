@@ -12,7 +12,7 @@ import {
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import { BiDownload } from "react-icons/bi";
 import DrawerExample from "./SideBar";
-import Resume from "./Harshita-Katara-Resume.pdf";
+// import Resume from "./Harshita-Katara-Resume.pdf";
 
 const navItems = [
   { label: "Home", id: "home" },
@@ -26,7 +26,7 @@ const navItems = [
 export default function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
-const [activeTab,setActiveTab]=useState("")
+  const [activeTab, setActiveTab] = useState("")
   useEffect(() => {
     toggleColorMode("dark");
   }, []);
@@ -61,7 +61,7 @@ const [activeTab,setActiveTab]=useState("")
         width={"94%"}
       >
         <Box w={{ base: "50%", sm: "100%" }} fontSize={{ lg: "20px", base: "16px" }} >
-          <Text as='em'>{"<Harshita Katara/>"}</Text>
+          <Text as='em'   color={useColorModeValue("gray.600", "white")}>{"<Harshita Katara/>"}</Text>
         </Box>
 
         {/* Desktop Menu */}
@@ -97,29 +97,29 @@ const [activeTab,setActiveTab]=useState("")
             <Button
               id="resume-button-1"
               className="animatedButton"
-         
-        size="sm"
+
+              size="sm"
               variant="solid"
-             
+
               onClick={handleResume}
             >
               <span>
-              <a
-                id="resume-link-1"
-                href={Resume}
-                download="Harshita-katara-Resume.pdf"
-                style={{ textDecoration: "none" }}
-              >
-                Resume
-              </a>
+                <a
+                  id="resume-link-1"
+                  // href={Resume}
+                  download="Harshita-katara-Resume.pdf"
+                  style={{ textDecoration: "none" }}
+                >
+                  Resume
+                </a>
               </span>
-             
+
             </Button>
             <Button onClick={toggleColorMode} size="sm" >
               <span>
-              {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+                {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
               </span>
-             
+
             </Button>
           </Flex>
         </Flex>

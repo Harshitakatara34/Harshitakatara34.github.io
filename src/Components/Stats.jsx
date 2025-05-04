@@ -1,4 +1,4 @@
-import { Box, Center, Flex, Heading, Image, Link, Stack } from "@chakra-ui/react";
+import { Box, Center, Flex, Heading, Image, Link, Stack, useColorModeValue } from "@chakra-ui/react";
 import React, { useEffect } from "react";
 import GitHubCalendar from "react-github-calendar";
 import AOS from 'aos';
@@ -21,7 +21,7 @@ const Stats = () => {
     }, []);
   return (
     <Box mt="15rem" textAlign="center">
-      <Heading data-aos="fade-down">GitHub Stats</Heading>
+      <Heading data-aos="fade-down" color={useColorModeValue("gray.600","white")}>GitHub Stats</Heading>
       <Stack    w="85%" margin="auto">
           
         <Center 

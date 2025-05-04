@@ -81,7 +81,7 @@ const About = () => {
       // p={{ base: "2", sm: "12" }}
       textAlign="center"
     > 
-      <Heading mb={"10"} as="h1" data-aos="fade-down">
+      <Heading mb={"10"} as="h1" data-aos="fade-down" color={useColorModeValue("gray.600","white")}>
         About
       </Heading>
       <Flex
@@ -133,7 +133,7 @@ const About = () => {
           <VStack>
 
 
-            <Text fontSize="16px" lineHeight="tall" color={useColorModeValue("gray.700", "gray.300")}>
+            <Text fontSize="16px" lineHeight="tall" color={useColorModeValue("gray.500", "gray.300")}>
               Hello! My name is Harshita Katara, and I am a skilled full stack web developer with a expertise in Mern Stack. My efficiency spans both front-end and back-end development, allowing me to build seamless user-friendly web applications from the ground up and to tackle complex development challenges. I am passionate about creating innovative solutions that enhance user experiences and drive business success. With a commitment to continuous learning and a strong foundation in software development, I am excited to contribute to dynamic projects and collaborate with forward-thinking teams.
             </Text>
 

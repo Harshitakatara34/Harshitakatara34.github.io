@@ -7,6 +7,7 @@ import {
   Image,
   Link,
   Text,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { BiLinkExternal } from "react-icons/bi";
 import { BsGithub } from "react-icons/bs";
@@ -56,10 +57,10 @@ function HelperProject({ image, title, techStack, desc, github, deploy }) {
       />
 
       <Box mt={4} p={4}>
-        <Text fontWeight="bold" fontSize="xl" mb={2} textAlign="left">
+        <Text fontWeight="bold" color={useColorModeValue("gray.600","white")} fontSize="xl" mb={2} textAlign="left">
           {title}
         </Text>
-        <Text fontSize="sm" textAlign="left" noOfLines={4}>
+        <Text fontSize="sm" color={useColorModeValue("gray.500","white")} textAlign="left" noOfLines={4}>
           {desc}
         </Text>
 
@@ -83,8 +84,9 @@ function HelperProject({ image, title, techStack, desc, github, deploy }) {
 
       <Flex justifyContent="space-between" p={4}>
         <Link href={github} isExternal>
-          <Button size="sm" colorScheme="teal" leftIcon={<BsGithub />}>
-            GitHub
+          <Button size="sm" colorScheme="teal" leftIcon={<BsGithub size="16"/>}    className="animatedButton" color="white">
+          <span>  GitHub</span>
+          
           </Button>
         </Link>
         <Link href={deploy} isExternal>

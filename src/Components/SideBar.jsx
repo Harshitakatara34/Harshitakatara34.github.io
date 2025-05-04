@@ -14,9 +14,10 @@ import {
   Text,
   useDisclosure,
   useColorMode,
+  useColorModeValue,
 } from "@chakra-ui/react";
 
-import Resume from "./Harshita-Katara-Resume.pdf";
+// import Resume from "./Harshita-Katara-Resume.pdf";
 
 const navTabs = [
   { label: "Home", id: "home", className: "nav-link home" },
@@ -31,6 +32,7 @@ export default function DrawerExample({ handleClickScroll, handleResume,activeTa
   const { colorMode, toggleColorMode } = useColorMode();
   const btnRef = useRef();
 
+  const hoverColor = useColorModeValue("gray.600", "gray.400");
   return (
     <>
       <Button ref={btnRef} colorScheme="teal" onClick={onOpen} className="animatedButton">
@@ -67,7 +69,7 @@ export default function DrawerExample({ handleClickScroll, handleResume,activeTa
               >
                 <span>
                   <a
-                    href={Resume}
+                    // href={Resume}
                     download="Harshita-katara-Resume.pdf"
                     style={{ textDecoration: "none", color: "inherit" }}
                   >
@@ -106,7 +108,7 @@ export default function DrawerExample({ handleClickScroll, handleResume,activeTa
                   borderRadius="lg"
                   role="group"
                   cursor="pointer"
-                  _hover={{ background:"(to-l, #81e6d9, #28628b)", color: "white" }}
+                  _hover={{ background:"(to-l, #81e6d9, #28628b)", color: hoverColor }}
                 >
                   {tab.label}
                 </Flex>

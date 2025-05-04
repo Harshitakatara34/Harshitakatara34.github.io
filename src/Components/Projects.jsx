@@ -1,4 +1,4 @@
-import { Box, Heading, SimpleGrid } from "@chakra-ui/react";
+import { Box, Heading, SimpleGrid, useColorModeValue } from "@chakra-ui/react";
 import React from "react";
 import HelperProject from "./helper";
 import img1 from "../Image/img1.png";
@@ -10,7 +10,7 @@ console.log(img1);
 const Projects = () => {
   return (
     <Box id="projects" textAlign={"center"} mt="6rem"  >
-      <Heading>Projects</Heading>
+      <Heading  color={useColorModeValue("gray.600","white")}>Projects</Heading>
       <SimpleGrid 
         justifyContent="center"
         textAlign={"center"}

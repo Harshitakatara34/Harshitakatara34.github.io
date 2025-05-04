@@ -92,3 +92,15 @@ html{
   transform: translate3d(100%, 0, 0);
  }
  
+ @keyframes floatUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px); /* Adjust this value for desired movement */
+  }
+}
+
+.floatUpDown {
+  animation: floatUpDown 3s ease-in-out infinite; /* Adjust time as needed */
+}
