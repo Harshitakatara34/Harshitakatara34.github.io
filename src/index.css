@@ -18,8 +18,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-html{
-  overflow-x: hidden;
+html,body{
+  overflow-x: hidden !important;
 }
 #projects::before {
   content: "";
