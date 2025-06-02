@@ -51,9 +51,9 @@ const Feature = ({ text, icon, iconBg }) => {
 
 export default function Home() {
   const { colorMode, toggleColorMode } = useColorMode();
-  // function handleResume() {
-  //   return window.open("https://drive.google.com/file/d/1laXdjw9Qyg-jQRMjw8sVn6J1FBRwSOtj/view?usp=sharing")
-  // }
+  function handleResume() {
+    return window.open("https://drive.google.com/file/d/1ZaQxol0jv_vesj8l8XlmUFFW-_C1s_6C/view?usp=sharing");
+  }
   return (
     <>
 
@@ -154,7 +154,7 @@ export default function Home() {
                 <Button id="resume-button-2" variant="solid"
                   className="animatedButton"
 
-                // onClick={handleResume}
+                onClick={handleResume}
 
                 >
                   <span>

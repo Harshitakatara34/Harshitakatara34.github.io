@@ -15,6 +15,7 @@ const Projects = () => {
         justifyContent="center"
         textAlign={"center"}
         m={"auto"}
+        mt="5rem"
         columns={{ base: "1", md: "2", xl: "2" }}
         spacing={{ base: "10px", md: "40px" }}
         w={{ base: "85%", md: "81%" }}
@@ -31,6 +32,14 @@ const Projects = () => {
 };
 
 let data = [
+  {
+    image: `${img4}`,
+    title: "Spade",
+    desc: "Spade is a cutting-edge satellite data ordering platform designed to streamline archive and tasking requests across multiple global providers including ISRO, BlackSky, Umbra, Satellogic, and more. It supports SAR, Optical, and Thermal data acquisition, allowing users to compare availability, pricing, and coverage in a unified interface. Built with React, RTK Query, and Leaflet.js on the frontend, and powered by a robust backend stack including Node.js, Express, Kafka, and MongoDB/PostgreSQL, Spade ensures efficient data processing, provider integration, and real-time updates. It plays a critical role in geospatial intelligence and Earth observation workflows by simplifying the end-to-end ordering process.",
+    techStack: ["HTML", "CSS", "JavaScript", "React", "RTK Query", "Leaflet.js", "Kafka", "Node.js", "MongoDb", "PostgreSQL", "Express.js"],
+    github: "",
+    deploy: "https:/spade.suhora.com",
+  },
   {
     image:`${img1}`,
     title: "Tackle&Trail (Clone-Of-Basspro)",
@@ -55,14 +64,8 @@ let data = [
     github: "https://github.com/Harshitakatara34/ragged-tank-492.git",
     deploy: "https://golden-sorbet-745819.netlify.app/",
   },
-  {
-    image:`${img4}`,
-    title: "Chicken (Clone-Of-Licious)",
-    desc: "Chicken, your premier online marketplace for sourcing top-quality poultry and fish products at the most competitive prices. Our diverse range of offerings ensures that you can place orders conveniently and enjoy doorstep delivery of the freshest and finest options for your culinary delights.",
-    techStack: ["HTML", "CSS", "JavaScript"],
-    github: "https://github.com/Harshitakatara34/defective-impulse-1904.git",
-    deploy: "https://superb-haupia-a7c7f2.netlify.app/",
-  },
+
+  
 
   ];
 

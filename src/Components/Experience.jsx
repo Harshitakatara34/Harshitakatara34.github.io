@@ -6,33 +6,19 @@ import "aos/dist/aos.css";
 const ExperienceTimeline = () => {
     const experiences = [
         {
-            company: "TechNova Solutions",
-            url: "https://technovasolutions.com",
-            position: "Frontend Developer - Freelance",
-            duration: "Feb, 2025 - Present",
-            description: "Developed QuickBite, a 60-minute food delivery platform for urban areas"
-        },
-        {
-            company: "Digital Horizon Inc.",
-            url: "https://digitalhorizon.com",
+            company: "Suhora Technologies Pvt. Ltd.",
+            url: "",
             position: "Full Stack Developer - Full Time",
-            duration: "Mar, 2024 - Jan, 2025",
-            description: "Created ERP system, Order Management Dashboard, implemented OAuth 2.0, resolved performance issues in legacy systems"
-        },
+            duration: "Aug, 2024 - Present",
+            description: "At Suhora Technologies, an AI-driven geospatial analytics company, I contributed as a Full Stack Developer, primarily focusing on frontend development. I played a key role in building an ERP-style dashboard for Spade — our satellite data ordering and tasking platform — integrating interactive map-based APIs for real-time satellite archive, ordering, and tasking. I worked closely with backend and design teams to ensure seamless integration, delivered clean and optimized code, and consistently met deadlines. My efforts significantly enhanced platform usability and performance, and I was recognized for my proactive problem-solving and strong collaboration."
+        },               
         {
-            company: "CloudMatrix Technologies",
-            url: "https://cloudmatrix.tech",
-            position: "React Developer - Internship",
-            duration: "Nov, 2023 - Feb, 2024",
-            description: "Developed social media analytics dashboard to track engagement metrics across multiple platforms"
-        },
-        {
-            company: "ReadEasy",
-            url: "https://www.readeasy.app",
-            position: "Web Developer - Freelance",
-            duration: "Jul, 2023 - Oct, 2023",
-            description: "Built an ebook subscription platform with admin panel and integrated PayPal payment system"
-        }
+            company: "Matrix Labs",
+            url: "",
+            position: "Software Developer - Full Time",
+            duration: "Jan, 2024 - Aug, 2024",
+            description: "At Matrix Labs, a blockchain-focused company, I worked as a frontend developer where I integrated GPT OpenAI APIs, managed wallet connections, and implemented smart contract interactions. I also contributed to building internal  dashboards, ensured secure OAuth 2.0 authentication, and optimized performance. I consistently delivered projects on time with a strong sense of ownership and accountability."
+        },        
     ];
 
     const headingFont = "__Livvic_1d926c, __Livvic_Fallback_1d926c";

@@ -39,7 +39,7 @@ function HelperProject({ image, title, techStack, desc, github, deploy }) {
       borderWidth="1px"
       borderRadius="lg"
       overflow="hidden"
-     mt="5rem"
+    //  mt="5rem"
       display="flex"
       flexDirection="column"
       justifyContent="space-between"
