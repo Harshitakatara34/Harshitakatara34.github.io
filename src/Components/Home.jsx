@@ -52,7 +52,7 @@ const Feature = ({ text, icon, iconBg }) => {
 export default function Home() {
   const { colorMode, toggleColorMode } = useColorMode();
   function handleResume() {
-    return window.open("https://drive.google.com/file/d/1ZaQxol0jv_vesj8l8XlmUFFW-_C1s_6C/view?usp=sharing");
+    return window.open("https://drive.google.com/file/d/18NQPqUqWs8PNsi4Ryfz5NBqPNrJ8TUFm/view?usp=sharing");
   }
   return (
     <>
