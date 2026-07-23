@@ -40,7 +40,7 @@ export default function Navbar() {
   };
 
   function handleResume() {
-    return window.open("https://drive.google.com/file/d/18NQPqUqWs8PNsi4Ryfz5NBqPNrJ8TUFm/view?usp=sharing");
+    return window.open("https://drive.google.com/file/d/1uH0AmxY1umefDUeQa5CT5mA0XrHxUrph/view?usp=drivesdk");
   }
 
   return (
